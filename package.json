@@ -1,0 +1,26 @@
+{
+  "name": "a-piece-of-earth",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "motion": "^13.1.0",
+    "next": "^16.3.1",
+    "postcss": "^8.5.26",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "tailwindcss": "^4.3.3",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.7.2"
+  }
+}
