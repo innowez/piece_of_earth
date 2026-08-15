@@ -87,7 +87,7 @@ export function AboutUs() {
 
       {/* Our story */}
       <div data-figma-id="451:691" className="relative w-full max-w-[996px] mx-auto mt-[120px] flex items-center gap-12">
-        <div data-figma-id="133:198" className="relative w-[522px] min-h-[513px] shrink-0 self-stretch bg-[#d9d9d9] bg-[url('/images/2481e8f4-a399-4ff3-94af-d8412023c36d.png')] bg-cover bg-center bg-no-repeat" />
+        <div data-figma-id="133:198" className="relative w-[522px] min-h-[513px] shrink-0 self-stretch bg-[#d9d9d9] bg-[url('/images/f69dfd2f616edd808571b2d8e668bbba199992b3.jpg')] bg-cover bg-center bg-no-repeat" />
         <div data-figma-id="451:690" className="relative w-[426px] h-[513px] shrink-0 flex flex-col gap-5">
           <div data-figma-id="451:689" className="flex flex-col min-w-0 gap-5 relative h-[133px] shrink-0 self-stretch">
             <span data-figma-id="140:203" className={`${FONT_CINZEL} text-[#6d440c] whitespace-pre text-[48px] leading-[65px] min-w-0 relative shrink-0 self-stretch`}>
