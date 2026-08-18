@@ -39,12 +39,12 @@ export function SiteMenu() {
         onClick={() => setOpen((v) => !v)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.92 }}
-        className="relative w-[172px] h-12 shrink-0 overflow-hidden origin-center bg-transparent border-none p-0 cursor-pointer"
+        className="relative w-[45px] lg:w-[172px] h-12 shrink-0 overflow-hidden origin-center bg-transparent border-none p-0 cursor-pointer"
       >
         <svg
           viewBox="-1.25 -1.25 30.5 16.5"
           preserveAspectRatio="none"
-          className="absolute left-[calc(50%_-_15.25px_+_48px)] top-[35.417%] w-[30.5px] h-[calc(29.167%_+_2.5px)] [transform:scaleX(-1)]"
+          className="absolute lg:left-[calc(50%_-_15.25px_+_48px)] top-[35.417%] w-[30.5px] h-[calc(29.167%_+_2.5px)] [transform:scaleX(-1)]"
         >
           <motion.line
             x1={28}

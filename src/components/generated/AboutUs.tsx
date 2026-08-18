@@ -31,13 +31,13 @@ function Frame315(p: {
   imageClassName: string;
   text: string;
 }) {
-  return <div data-figma-id={p["data-figma-id"]} className="relative w-full max-w-[336px] min-w-0 flex-1 h-[401px] flex flex-col gap-4">
-      <div data-figma-id="457:815" className={`${p.imageClassName} bg-cover bg-center bg-no-repeat min-w-0 min-h-0 relative flex-1 self-stretch`} />
-      <div data-figma-id="457:816" className="flex flex-col min-w-0 gap-3 relative h-[60px] shrink-0 self-stretch">
-        <span data-figma-id="457:817" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] text-[24px] font-medium leading-[29.256px] min-w-0 min-h-0 relative flex-1 self-stretch`}>
+  return <div data-figma-id={p["data-figma-id"]} className="relative w-[calc(50%-12px)] sm:w-[calc(50%-16px)] lg:w-[336px] flex-none flex flex-col gap-3 sm:gap-4">
+      <div data-figma-id="457:815" className={`${p.imageClassName} w-full h-[172px] sm:h-[240px] lg:h-[325px] shrink-0`} />
+      <div data-figma-id="457:816" className="flex flex-col min-w-0 gap-2 sm:gap-3 relative h-max shrink-0 self-stretch">
+        <span data-figma-id="457:817" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] text-[18px] sm:text-[24px] font-medium leading-[22px] sm:leading-[29.256px] min-w-0 min-h-0 relative flex-1 self-stretch`}>
           {p.text}
         </span>
-        <span data-figma-id="457:818" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] leading-[24px] text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
+        <span data-figma-id="457:818" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] leading-[24px] text-[14px] sm:text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
           {"What they do"}
         </span>
       </div>
@@ -59,10 +59,10 @@ export function AboutUs() {
 
     <div data-figma-id="133:6" className="relative w-full self-start bg-[#fff8e7] flex flex-col overflow-x-hidden">
       {/* Header */}
-      <div data-figma-id="133:184" className="fixed top-0 left-0 right-0 z-50 w-full bg-[#fff8e7] [filter:drop-shadow(0px_2px_8px_rgba(0,0,0,0.06))] flex justify-between box-border px-6 xl:px-[120px] py-5 items-center">
+      <div data-figma-id="133:184" className="fixed top-0 left-0 right-0 z-50 w-full bg-[#fff8e7] [filter:drop-shadow(0px_2px_8px_rgba(0,0,0,0.06))] flex justify-between box-border px-4 sm:px-6 xl:px-[120px] py-3 sm:py-5 items-center">
         <SiteMenu />
-        <div data-figma-id="133:187" className="relative w-[156px] h-12 shrink-0 bg-[url('/images/a0cff4ec-b706-4f7a-bf6e-e2aac10b18d2.png')] bg-[length:117.465%_254.047%] bg-[position:44.663%_61.292%] bg-no-repeat" />
-        <div data-figma-id="133:188" className="relative w-[171px] h-10 shrink-0 bg-[#fff8e7] shadow-[inset_0_0_0_1px_#9ba47f] flex box-border items-center justify-center py-2.5 px-3 gap-2">
+        <div data-figma-id="133:187" className="relative w-[110px] h-9 sm:w-[156px] sm:h-12 shrink-0 bg-[url('/images/a0cff4ec-b706-4f7a-bf6e-e2aac10b18d2.png')] bg-[length:117.465%_254.047%] bg-[position:44.663%_61.292%] bg-no-repeat" />
+        <div data-figma-id="133:188" className="relative w-9 h-9 sm:w-[171px] sm:h-10 shrink-0 bg-[#fff8e7] shadow-[inset_0_0_0_1px_#9ba47f] flex box-border items-center justify-center py-2 px-2 sm:py-2.5 sm:px-3 gap-2">
           <div data-figma-id="72:284" className="relative w-5 h-5 shrink-0 overflow-hidden">
             <svg data-figma-id="72:285" viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
               <use href="#figma-derived-14" fill="#9ba47f" />
@@ -71,94 +71,70 @@ export function AboutUs() {
               <use href="#figma-derived-15" fill="#9ba47f" />
             </svg>
           </div>
-          <span data-figma-id="72:287" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#9ba47f] whitespace-pre font-medium relative shrink-0`}>
+          <span data-figma-id="72:287" className={`${FONT_MONTSERRAT} hidden sm:inline text-[16px] leading-[20px] text-[#9ba47f] whitespace-pre font-medium relative shrink-0`}>
             {"Book Your Slot"}
           </span>
         </div>
       </div>
-      <div className="h-[88px] w-full shrink-0" aria-hidden="true" />
+      <div className="h-[68px] sm:h-[88px] w-full shrink-0" aria-hidden="true" />
 
       {/* Hero image band with "About us" title overlay */}
-      <div data-figma-id="133:194" className="relative w-full h-[471px] bg-[url('/images/74ff52e3-1f6a-4da4-8acf-4c5a11373ff7.jpg')] bg-[length:100%_171.975%] bg-[position:0%_63.655%] bg-no-repeat">
-        <span data-figma-id="302:781" className={`whitespace-pre text-center ${FONT_CINZEL} text-white text-[48px] leading-[65px] lowercase [mix-blend-mode:overlay] absolute left-[calc(50%_+_-113px)] top-[203px] [font-variation-settings:"wght"_500]`}>
+      <div data-figma-id="133:194" className="relative w-full h-[220px] sm:h-[320px] lg:h-[471px] bg-[url('/images/74ff52e3-1f6a-4da4-8acf-4c5a11373ff7.jpg')] bg-[length:100%_171.975%] bg-[position:0%_63.655%] bg-no-repeat">
+        <span data-figma-id="302:781" className={`whitespace-pre text-center ${FONT_CINZEL} text-white text-[32px] sm:text-[40px] lg:text-[48px] leading-[43px] sm:leading-[54px] lg:leading-[65px] lowercase [mix-blend-mode:overlay] absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 [font-variation-settings:"wght"_500]`}>
           {"About us"}
         </span>
       </div>
 
       {/* Our story */}
-      <div data-figma-id="451:691" className="relative w-full max-w-[996px] mx-auto mt-[120px] flex items-center gap-12">
-        <div data-figma-id="133:198" className="relative w-[522px] min-h-[513px] shrink-0 self-stretch bg-[#d9d9d9] bg-[url('/images/f69dfd2f616edd808571b2d8e668bbba199992b3.jpg')] bg-cover bg-center bg-no-repeat" />
-        <div data-figma-id="451:690" className="relative w-[426px] h-[513px] shrink-0 flex flex-col gap-5">
-          <div data-figma-id="451:689" className="flex flex-col min-w-0 gap-5 relative h-[133px] shrink-0 self-stretch">
-            <span data-figma-id="140:203" className={`${FONT_CINZEL} text-[#6d440c] whitespace-pre text-[48px] leading-[65px] min-w-0 relative shrink-0 self-stretch`}>
+      <div data-figma-id="451:691" className="relative w-full max-w-[996px] mx-auto mt-16 lg:mt-[120px] px-6 lg:px-0 flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
+        <div data-figma-id="451:690" className="relative w-full lg:w-[426px] shrink-0 flex flex-col gap-4 lg:gap-5">
+          <div data-figma-id="451:689" className="flex flex-col min-w-0 gap-3 lg:gap-5 relative h-max shrink-0 self-stretch">
+            <span data-figma-id="140:203" className={`${FONT_CINZEL} text-[#6d440c] whitespace-pre text-center lg:text-left text-[32px] sm:text-[40px] lg:text-[48px] leading-[43px] sm:leading-[54px] lg:leading-[65px] min-w-0 relative shrink-0 self-stretch`}>
               {"our story"}
             </span>
-            <span data-figma-id="140:204" className={`${FONT_MONTSERRAT} text-[#364139] leading-[24px] whitespace-normal text-[18px] font-medium text-justify min-w-0 relative h-[48px] shrink-0 self-stretch`}>
-              <span className="absolute top-0 left-0 whitespace-pre leading-[24px] text-left">{"A Piece of Earth began very simply:\nas a choice."}</span>
+            <span data-figma-id="140:204" className={`${FONT_MONTSERRAT} text-[#364139] leading-[20px] lg:leading-[24px] whitespace-pre text-center lg:text-left text-[14px] sm:text-[16px] lg:text-[18px] font-medium lg:text-justify min-w-0 relative h-max shrink-0 self-stretch`}>
+              {"A Piece of Earth began very simply:\nas a choice."}
             </span>
           </div>
-          <span data-figma-id="140:202" className={`${FONT_MONTSERRAT} text-[#364139] leading-[24px] whitespace-normal text-[16px] font-normal min-w-0 relative h-[360px] shrink-0 self-stretch`}>
-            <span className="absolute top-0 left-0 whitespace-pre leading-[24px] text-left">{"We are a family-rooted collective who choose a \ncalmer life. We want to slow down, tend a garden, \nand closely observe the wild flora and fauna sharing \nthis space with us. Instead of rushing through the \nworld, we choose to creatively document her—\nlearning her rhythms, experimenting with natural \npigments, and finding our place within her.\n\nAt the core of this journey is pottery. Working with \nclay keeps us quite literally in touch with the ground, \nusing the earth herself to tell the stories we wonder \nabout and trace the patterns we admire. Clay cannot \nbe rushed; the craft demands full presence, teaching \na deep, grounding patience as a form takes shape in \nthe hands and quiets the mind."}</span>
+          <span data-figma-id="140:202" className={`${FONT_MONTSERRAT} text-[#364139] leading-[20px] lg:leading-[24px] whitespace-pre-line text-center lg:text-left text-[12px] sm:text-[14px] lg:text-[16px] font-normal min-w-0 relative h-max shrink-0 self-stretch`}>
+            {"We are a family-rooted collective who choose a \ncalmer life. We want to slow down, tend a garden, \nand closely observe the wild flora and fauna sharing \nthis space with us. Instead of rushing through the \nworld, we choose to creatively document her—\nlearning her rhythms, experimenting with natural \npigments, and finding our place within her.\n\nAt the core of this journey is pottery. Working with \nclay keeps us quite literally in touch with the ground, \nusing the earth herself to tell the stories we wonder \nabout and trace the patterns we admire. Clay cannot \nbe rushed; the craft demands full presence, teaching \na deep, grounding patience as a form takes shape in \nthe hands and quiets the mind."}
           </span>
         </div>
+        <div data-figma-id="133:198" className="relative w-full h-[280px] sm:h-[328px] lg:h-auto lg:w-[522px] lg:min-h-[513px] shrink-0 self-stretch bg-[#d9d9d9] bg-[url('/images/f69dfd2f616edd808571b2d8e668bbba199992b3.jpg')] bg-cover bg-center bg-no-repeat" />
       </div>
 
       {/* Our team */}
-      <div data-figma-id="457:930" className="relative w-full mt-[120px] bg-[#f3e8d5] flex flex-col box-border px-6 xl:px-[144px] py-[72px] gap-2.5">
-        <div data-figma-id="457:929" className="relative w-full flex flex-col items-center gap-12">
-          <span data-figma-id="457:845" className={`whitespace-pre text-center ${FONT_CINZEL} text-[#6d440c] text-[48px] leading-[65px] min-w-0 relative shrink-0 self-stretch`}>
+      <div data-figma-id="457:930" className="relative w-full mt-16 lg:mt-[120px] bg-[#f3e8d5] flex flex-col box-border px-6 xl:px-[144px] py-12 lg:py-[72px] gap-2.5">
+        <div data-figma-id="457:929" className="relative w-full flex flex-col items-center gap-8 lg:gap-12">
+          <span data-figma-id="457:845" className={`whitespace-pre text-center ${FONT_CINZEL} text-[#6d440c] text-[32px] sm:text-[40px] lg:text-[48px] leading-[43px] sm:leading-[54px] lg:leading-[65px] min-w-0 relative shrink-0 self-stretch`}>
             {"our team"}
           </span>
-          <div data-figma-id="457:928" className="flex flex-col min-w-0 items-center gap-12 relative h-max w-full shrink-0 self-stretch">
-            <div data-figma-id="457:869" className="flex min-w-0 items-center justify-center gap-[72px] relative h-max shrink-0 self-stretch">
-              <Frame315 data-figma-id="457:814" imageClassName="bg-[url('/images/40efe39f-11a5-42d0-9fa0-c085441fd95a.jpg')]" text="Jyothis" />
-              <Frame315 data-figma-id="457:846" imageClassName="bg-[url('/images/485d8742-a2fc-4411-b79c-577315dcb171.jpg')]" text="Lilly" />
-              <Frame315 data-figma-id="457:882" imageClassName="bg-[url('/images/5aa739dc-168b-47bf-956b-06bb113e26bf.jpg')]" text="Rajesh" />
-            </div>
-            <div data-figma-id="457:868" className="relative w-full max-w-[744px] mx-auto h-max shrink-0 flex items-center gap-[72px]">
-              <div data-figma-id="457:862" className="relative w-full max-w-[336px] min-w-0 flex-1 h-[401px] flex flex-col gap-4">
-                <div data-figma-id="457:863" className="bg-[url('/images/4766ea83-dc2a-4834-bd50-119ae3687a24.jpg')] bg-[length:100%_142.308%] bg-[position:0%_100.353%] bg-no-repeat min-w-0 min-h-0 relative flex-1 self-stretch" />
-                <div data-figma-id="457:864" className="flex flex-col min-w-0 gap-3 relative h-[60px] shrink-0 self-stretch">
-                  <span data-figma-id="457:865" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] text-[24px] font-medium leading-[29.256px] min-w-0 min-h-0 relative flex-1 self-stretch`}>
-                    {"Subhanu"}
-                  </span>
-                  <span data-figma-id="457:866" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] leading-[24px] text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
-                    {"What they do"}
-                  </span>
-                </div>
-              </div>
-              <div data-figma-id="457:894" className="relative w-full max-w-[336px] min-w-0 flex-1 h-[401px] flex flex-col gap-4">
-                <div data-figma-id="457:895" className="bg-[url('/images/9a0eb1d5-e70b-4419-b159-fd9c32432594.jpg')] bg-cover bg-center bg-no-repeat min-w-0 min-h-0 relative flex-1 self-stretch" />
-                <div data-figma-id="457:896" className="flex flex-col min-w-0 gap-3 relative h-[60px] shrink-0 self-stretch">
-                  <span data-figma-id="457:897" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] text-[24px] font-medium leading-[29.256px] min-w-0 min-h-0 relative flex-1 self-stretch`}>
-                    {"Thejaswitha"}
-                  </span>
-                  <span data-figma-id="457:898" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] leading-[24px] text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
-                    {"What they do"}
-                  </span>
-                </div>
-              </div>
-            </div>
+          <div data-figma-id="457:928" className="flex flex-wrap justify-center min-w-0 items-start gap-6 sm:gap-8 lg:gap-[72px] relative h-max w-full max-w-[1200px] mx-auto shrink-0 self-stretch">
+            <Frame315 data-figma-id="457:814" imageClassName="bg-[url('/images/40efe39f-11a5-42d0-9fa0-c085441fd95a.jpg')] bg-cover bg-center bg-no-repeat" text="Jyothis" />
+            <Frame315 data-figma-id="457:846" imageClassName="bg-[url('/images/485d8742-a2fc-4411-b79c-577315dcb171.jpg')] bg-cover bg-center bg-no-repeat" text="Lilly" />
+            <Frame315 data-figma-id="457:882" imageClassName="bg-[url('/images/5aa739dc-168b-47bf-956b-06bb113e26bf.jpg')] bg-cover bg-center bg-no-repeat" text="Rajesh" />
+            <Frame315 data-figma-id="457:862" imageClassName="bg-[url('/images/4766ea83-dc2a-4834-bd50-119ae3687a24.jpg')] bg-[length:100%_142.308%] bg-[position:0%_100.353%] bg-no-repeat" text="Subhanu" />
+            <Frame315 data-figma-id="457:894" imageClassName="bg-[url('/images/9a0eb1d5-e70b-4419-b159-fd9c32432594.jpg')] bg-cover bg-center bg-no-repeat" text="Thejaswitha" />
           </div>
         </div>
       </div>
 
       {/* Begin the Conversation — contact form */}
-      <div data-figma-id="142:329" className="relative w-full max-w-[1200px] mx-auto mt-[120px] flex items-center gap-12">
-        <div data-figma-id="142:330" className="relative w-[563px] h-[524px] shrink-0 bg-[#d9d9d9] bg-[url('/images/1e312c08-6059-4e9b-abb8-551dacd8fcec.jpg')] bg-[length:211.512%_131.107%] bg-[position:22.559%_9.392%] bg-no-repeat" />
-        <div data-figma-id="142:331" className="relative w-[589px] h-[524px] shrink-0 flex flex-col gap-9">
-          <div data-figma-id="142:332" className="flex flex-col min-w-0 gap-7 relative h-[440px] shrink-0 self-stretch">
-            <span data-figma-id="142:333" className={`${FONT_CINZEL} text-[#6d440c] whitespace-normal text-[36px] leading-[49px] lowercase min-w-0 relative h-[98px] shrink-0 self-stretch`}>
-              <span className="absolute top-0 left-0 whitespace-pre leading-[49px] text-left">{"Begin the\nConversation"}</span>
+      <div data-figma-id="142:329" className="relative w-full max-w-[1200px] mx-auto mt-16 lg:mt-[120px] px-6 lg:px-0 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div data-figma-id="142:330" className="relative w-full h-[280px] sm:h-[328px] lg:h-[524px] lg:w-[563px] shrink-0 bg-[#d9d9d9] bg-[url('/images/1e312c08-6059-4e9b-abb8-551dacd8fcec.jpg')] bg-[length:211.512%_131.107%] bg-[position:22.559%_9.392%] bg-no-repeat" />
+        <div data-figma-id="142:331" className="relative w-full lg:w-[589px] shrink-0 flex flex-col gap-6 lg:gap-9">
+          <div data-figma-id="142:332" className="flex flex-col min-w-0 gap-5 lg:gap-7 relative h-max shrink-0 self-stretch">
+            <span data-figma-id="142:333" className={`${FONT_CINZEL} text-[#6d440c] whitespace-pre-line text-[24px] sm:text-[30px] lg:text-[36px] leading-[32px] sm:leading-[40px] lg:leading-[49px] lowercase min-w-0 relative h-max shrink-0 self-stretch`}>
+              {"Begin the\nConversation"}
             </span>
-            <div data-figma-id="142:334" className="flex flex-col min-w-0 gap-12 relative h-[314px] shrink-0 self-stretch">
-              <div data-figma-id="142:335" className="flex flex-col min-w-0 gap-7 relative h-[218px] shrink-0 self-stretch">
+            <div data-figma-id="142:334" className="flex flex-col min-w-0 gap-8 lg:gap-12 relative h-max shrink-0 self-stretch">
+              <div data-figma-id="142:335" className="flex flex-col min-w-0 gap-5 lg:gap-7 relative h-max shrink-0 self-stretch">
                 <div data-figma-id="142:336" className="shadow-[inset_0_-1px_0_0_#5f7053] flex box-border items-center justify-center min-w-0 py-3 px-0 gap-2.5 relative h-max shrink-0 self-stretch">
                   <span data-figma-id="142:337" className={`${FONT_MONTSERRAT} text-[#364139] whitespace-pre text-[16px] font-medium leading-[30px] min-w-0 relative flex-1`}>
                     {"Full Name"}
                   </span>
                 </div>
-                <div data-figma-id="142:338" className="flex min-w-0 gap-7 relative h-max shrink-0 self-stretch">
+                <div data-figma-id="142:338" className="flex flex-col sm:flex-row min-w-0 gap-5 sm:gap-7 relative h-max shrink-0 self-stretch">
                   <div data-figma-id="142:339" className="shadow-[inset_0_-1px_0_0_#5f7053] flex box-border items-center justify-center min-w-0 py-3 px-0 gap-2.5 relative h-max flex-1">
                     <span data-figma-id="142:340" className={`${FONT_MONTSERRAT} text-[#364139] whitespace-pre text-[16px] font-medium leading-[30px] min-w-0 relative flex-1`}>
                       {"Email Address"}
@@ -183,26 +159,26 @@ export function AboutUs() {
               </div>
             </div>
           </div>
-          <span data-figma-id="142:347" className={`${FONT_MONTSERRAT} text-[#364139] leading-[24px] whitespace-normal text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
-            <span className="absolute top-0 left-0 whitespace-pre leading-[24px] text-left">{"Thank you for reaching out. We'll connect with you shortly via \nWhatsApp or email."}</span>
+          <span data-figma-id="142:347" className={`${FONT_MONTSERRAT} text-[#364139] leading-[24px] whitespace-pre-line text-[14px] sm:text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
+            {"Thank you for reaching out. We'll connect with you shortly via \nWhatsApp or email."}
           </span>
         </div>
       </div>
 
       {/* Footer */}
-      <div data-figma-id="641:137" className="relative w-full mt-[120px] bg-[#f3e8d5] shadow-[inset_0_1px_0_0_#6d440c] flex flex-col box-border px-6 xl:px-[120px] py-[72px] gap-2.5">
-        <div data-figma-id="641:138" className="relative w-full flex flex-col gap-10 max-w-[1200px] mx-auto">
-          <div data-figma-id="641:139" className="flex flex-col min-w-0 gap-10 relative h-max shrink-0 self-stretch">
-            <div data-figma-id="641:140" className="flex justify-between min-w-0 relative h-max shrink-0 self-stretch flex-wrap gap-8">
-              <div data-figma-id="641:141" className="relative w-[296px] h-[114px] shrink-0 flex flex-col gap-8">
-                <div data-figma-id="641:142" className="relative w-[370px] h-[114px] shrink-0 bg-[url('/images/a0cff4ec-b706-4f7a-bf6e-e2aac10b18d2.png')] bg-[length:117.465%_254.047%] bg-[position:44.663%_61.292%] bg-no-repeat" />
+      <div data-figma-id="641:137" className="relative w-full mt-16 lg:mt-[120px] bg-[#f3e8d5] shadow-[inset_0_1px_0_0_#6d440c] flex flex-col box-border px-6 xl:px-[120px] py-12 lg:py-[72px] gap-2.5">
+        <div data-figma-id="641:138" className="relative w-full flex flex-col gap-8 lg:gap-10 max-w-[1200px] mx-auto">
+          <div data-figma-id="641:139" className="flex flex-col min-w-0 gap-8 lg:gap-10 relative h-max shrink-0 self-stretch">
+            <div data-figma-id="641:140" className="flex flex-col sm:flex-row justify-between min-w-0 relative h-max shrink-0 self-stretch flex-wrap gap-8">
+              <div data-figma-id="641:141" className="relative w-full max-w-[296px] h-[86px] sm:h-[114px] shrink-0 flex flex-col gap-8">
+                <div data-figma-id="641:142" className="relative w-full max-w-[370px] h-[86px] sm:h-[114px] shrink-0 bg-[url('/images/a0cff4ec-b706-4f7a-bf6e-e2aac10b18d2.png')] bg-[length:117.465%_254.047%] bg-[position:44.663%_61.292%] bg-no-repeat" />
               </div>
-              <div data-figma-id="641:144" className="relative w-max h-max shrink-0 flex justify-end gap-[100px]">
-                <div data-figma-id="641:145" className="relative w-max h-[220px] shrink-0 flex flex-col gap-4">
+              <div data-figma-id="641:144" className="relative w-full sm:w-max h-max shrink-0 flex flex-col sm:flex-row justify-start sm:justify-end gap-8 sm:gap-[60px] lg:gap-[100px]">
+                <div data-figma-id="641:145" className="relative w-max h-max shrink-0 flex flex-col gap-4">
                   <span data-figma-id="641:146" className={`${FONT_MONTSERRAT} text-[#6d440c] whitespace-pre text-[20px] font-medium leading-[24.38px] uppercase relative shrink-0 self-stretch`}>
                     {"Quick Links"}
                   </span>
-                  <div data-figma-id="641:147" className="flex flex-col min-w-[157px] gap-3 relative h-[180px] shrink-0 self-stretch">
+                  <div data-figma-id="641:147" className="flex flex-col min-w-[157px] gap-3 relative h-max shrink-0 self-stretch">
                     <Home data-figma-id="641:148" text="Home" />
                     <Home data-figma-id="641:149" text="About Us" />
                     <span data-figma-id="641:150" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre font-normal relative shrink-0 [font-variation-settings:"wght"_500]`}>
@@ -213,26 +189,28 @@ export function AboutUs() {
                     <Home data-figma-id="641:153" text="Contact" />
                   </div>
                 </div>
-                <div data-figma-id="641:154" className="relative w-max h-[100px] shrink-0 flex flex-col gap-4">
+                <div data-figma-id="641:154" className="relative w-max h-max shrink-0 flex flex-col gap-4">
                   <span data-figma-id="641:155" className={`${FONT_MONTSERRAT} text-[#6d440c] whitespace-pre text-[20px] font-medium leading-[24.38px] uppercase relative shrink-0 self-stretch`}>
                     {"Contact"}
                   </span>
-                  <span data-figma-id="641:156" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-normal font-normal min-w-[125px] relative h-[60px] shrink-0 self-stretch`}>
-                    <span className="absolute top-0 left-0 whitespace-pre leading-[20px] text-left">{"Phone Number\nEmail Address\nLocation"}</span>
+                  <span data-figma-id="641:156" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre-line font-normal min-w-[125px] relative h-max shrink-0 self-stretch`}>
+                    {"Phone Number\nEmail Address\nLocation"}
                   </span>
                 </div>
               </div>
             </div>
             <div data-figma-id="641:157" className="border-t border-dashed border-[#6d440c] min-w-0 relative h-0 shrink-0 self-stretch" />
           </div>
-          <div data-figma-id="641:158" className="flex justify-between items-center min-w-0 relative h-max shrink-0 self-stretch">
+          <div data-figma-id="641:158" className="flex flex-col-reverse sm:flex-row justify-between items-center min-w-0 relative h-max shrink-0 self-stretch gap-4">
             <div data-figma-id="641:159" className="relative w-[164px] h-max shrink-0 flex gap-3">
               <SocialMediaIcon data-figma-id="641:160" viewBox="0 0 20 20" iconClassName="w-4 h-4" href="#figma-vector-136" />
               <SocialMediaIcon data-figma-id="641:163" viewBox="0 0 125.248 128" iconClassName="w-3.5 h-3.5" href="#figma-vector-137" />
               <SocialMediaIcon data-figma-id="641:166" viewBox="0 0 182.337 127.131" iconClassName="w-5 h-3.5" href="#figma-vector-138" />
               <SocialMediaIcon data-figma-id="641:169" viewBox="0 0 116.67 220.52" iconClassName="w-2 h-4" href="#figma-vector-139" />
             </div>
-            <Home data-figma-id="641:172" text="© 2026 A piece of earth. All Rights Reserved." />
+            <span data-figma-id="641:172" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre text-center sm:text-left font-normal relative shrink-0`}>
+              {"© 2026 A piece of earth. All Rights Reserved."}
+            </span>
           </div>
         </div>
       </div>
