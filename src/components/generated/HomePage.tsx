@@ -1,3 +1,5 @@
+import Footer from '../footer';
+import Form from '../form';
 import { Header } from '../header';
 
 const FONT_MONTSERRAT = "font-['Montserrat',_system-ui,_sans-serif]";
@@ -18,39 +20,6 @@ const FONT_CINZEL_24 = `${FONT_CINZEL} text-2xl leading-[32.352px] text-[#6d440c
 const ROW1 = "flex py-2.5 px-3 box-border items-center justify-center gap-2";
 const ROW3 = "flex py-2.5 px-6 box-border items-center justify-center gap-2";
 const COL1 = "flex flex-col";
-const COL2 = `${COL1} box-border gap-2.5 pt-[229px] px-7 pb-7`;
-const SURFACE1 =
-  "bg-[linear-gradient(180deg,rgba(0,0,0,0)_48.187%,rgba(0,0,0,0.5)_100%),url('/images/0f4a01c5-3380-4c07-976e-284a7575a5dd.png')] bg-cover bg-center bg-no-repeat";
-const SURFACE4 =
-  "bg-[url('/images/2d7ad552-1660-49df-a5ad-d3286217f84e.png')] [background-size:117.465%_254.047%] [background-position:44.663%_61.292%] bg-no-repeat";
-
-function Home(p: { "data-figma-id": string; text: string }) {
-  return (
-    <span data-figma-id={p["data-figma-id"]} className={`${FONT_MONTSERRAT_16D} relative shrink-0`}>
-      {p.text}
-    </span>
-  );
-}
-
-function SocialMediaIcon(p: {
-  "data-figma-id": string;
-  viewBox: string;
-  iconClassName: string;
-  href: string;
-}) {
-  return (
-    <div
-      data-figma-id={p["data-figma-id"]}
-      className="relative w-8 h-8 shrink-0 bg-[#6d440c] rounded-[100px] box-border gap-2.5 flex p-2 items-center justify-center"
-    >
-      <div data-figma-id="641:235" className="relative w-6 h-6 shrink-0 box-border gap-2.5 flex p-2.5 items-center justify-center">
-        <svg data-figma-id="641:236" viewBox={p.viewBox} preserveAspectRatio="none" className={`relative shrink-0 ${p.iconClassName}`}>
-          <use href={p.href} fill="#fff8e7" />
-        </svg>
-      </div>
-    </div>
-  );
-}
 
 function Frame291(p: { "data-figma-id": string; bgClassName: string; text: string }) {
   return (
@@ -463,106 +432,10 @@ export function HomePage() {
         </div>
 
         {/* Begin the Conversation — contact form */}
-        <div data-figma-id="79:831" className="relative w-full max-w-[1200px] mx-auto mt-[120px] flex items-center gap-12">
-          <div
-            data-figma-id="79:767"
-            className="relative w-[563px] h-[524px] shrink-0 bg-[#d9d9d9] bg-[url('/images/e45c144a-179d-45d9-a65e-d96cd694e95c.jpg')] [background-size:211.512%_131.107%] [background-position:22.559%_9.392%] bg-no-repeat"
-          />
-          <div data-figma-id="79:830" className="relative w-[589px] h-[524px] shrink-0 flex flex-col gap-9">
-            <div data-figma-id="79:829" className="flex flex-col min-w-0 gap-7 relative h-[440px] shrink-0 self-stretch">
-              <span data-figma-id="79:813" className={`${FONT_CINZEL} text-[#6d440c] lowercase whitespace-normal text-[36px] leading-[49px] min-w-0 relative h-[98px] shrink-0 self-stretch`}>
-                <span className="absolute top-0 left-0 whitespace-pre leading-[49px] text-left">{"Begin the\nConversation"}</span>
-              </span>
-              <div data-figma-id="79:828" className="flex flex-col min-w-0 gap-12 relative h-[314px] shrink-0 self-stretch">
-                <div data-figma-id="79:826" className="flex flex-col min-w-0 gap-7 relative h-[218px] shrink-0 self-stretch">
-                  <div data-figma-id="79:816" className="[box-shadow:inset_0_-1px_0_0_#5f7053] box-border gap-2.5 min-w-0 flex py-3 items-center justify-center relative h-max shrink-0 self-stretch">
-                    <input type="text" data-figma-id="79:815" className={`${FONT_MONTSERRAT} ${TEXT6} whitespace-pre text-base min-w-0 relative flex-1`} placeholder="Full Name" />
-                  </div>
-                  <div data-figma-id="79:821" className="min-w-0 flex gap-7 relative h-max shrink-0 self-stretch">
-                    <div data-figma-id="79:817" className="[box-shadow:inset_0_-1px_0_0_#5f7053] box-border gap-2.5 min-w-0 flex py-3 items-center justify-center relative h-max flex-1">
-                      <input type="text" data-figma-id="79:818" className={`${FONT_MONTSERRAT} ${TEXT6} whitespace-pre text-base min-w-0 relative flex-1`} placeholder="Email Address" />
-                    </div>
-                    <div data-figma-id="79:819" className="[box-shadow:inset_0_-1px_0_0_#5f7053] box-border gap-2.5 min-w-0 flex py-3 items-center justify-center relative h-max flex-1">
-                      <input type='text' data-figma-id="79:820" className={`${FONT_MONTSERRAT} ${TEXT6} whitespace-pre text-base min-w-0 relative flex-1`} placeholder='Phone Number' />
-                    </div>
-                  </div>
-                  <div data-figma-id="79:822" className="[box-shadow:inset_0_-1px_0_0_#5f7053] box-border gap-2.5 min-w-0 flex py-3 items-center justify-center relative h-max shrink-0 self-stretch">
-                    <textarea data-figma-id="79:823" className={`${FONT_MONTSERRAT} ${TEXT6} whitespace-pre text-base min-w-0 relative flex-1`}
-                      placeholder='Message'
-                    />
-                  </div>
-                </div>
-                <div data-figma-id="79:824" className={`relative w-[108px] h-12 shrink-0 bg-[#845436] [box-shadow:inset_0_0_0_1px_#845436] ${ROW3}`}>
-                  <span data-figma-id="79:825" className={`${FONT_MONTSERRAT_16C} relative shrink-0`}>
-                    {"Submit"}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <span data-figma-id="79:827" className={`${FONT_MONTSERRAT} ${TEXT5} text-base font-normal min-w-0 min-h-0 relative flex-1 self-stretch`}>
-              <span className="absolute top-0 left-0 whitespace-pre leading-6 text-left">
-                {"Thank you for reaching out. We'll connect with you shortly via WhatsApp \nor email."}
-              </span>
-            </span>
-          </div>
-        </div>
+        <Form />
 
         {/* Footer */}
-        <div
-          data-figma-id="641:211"
-          className="relative w-full mt-[120px] bg-[#f3e8d5] [box-shadow:inset_0_1px_0_0_#6d440c] flex flex-col box-border gap-2.5 py-[72px] px-6 xl:px-[120px]"
-        >
-          <div data-figma-id="641:212" className="relative w-full flex flex-col gap-10 max-w-[1200px] mx-auto">
-            <div data-figma-id="641:213" className="flex flex-col min-w-0 gap-10 relative h-max shrink-0 self-stretch">
-              <div data-figma-id="641:214" className="flex justify-between min-w-0 relative h-max shrink-0 self-stretch flex-wrap gap-8">
-                <div data-figma-id="641:215" className="relative w-[296px] h-[114px] shrink-0 flex flex-col gap-8">
-                  <div data-figma-id="641:216" className={`relative w-[370px] h-[114px] shrink-0 ${SURFACE4}`} />
-                </div>
-                <div data-figma-id="641:218" className="relative w-max h-max shrink-0 flex justify-end gap-[100px]">
-                  <div data-figma-id="641:219" className="relative w-max h-[220px] shrink-0 flex flex-col gap-4">
-                    <span
-                      data-figma-id="641:220"
-                      className={`${FONT_MONTSERRAT} text-[#6d440c] whitespace-pre text-xl font-medium leading-[24.38px] uppercase relative shrink-0 self-stretch`}
-                    >
-                      {"Quick Links"}
-                    </span>
-                    <div data-figma-id="641:221" className="flex flex-col min-w-[157px] gap-3 relative h-[180px] shrink-0 self-stretch">
-                      <Home data-figma-id="641:222" text="Home" />
-                      <Home data-figma-id="641:223" text="About Us" />
-                      <span data-figma-id="641:224" className={`${FONT_MONTSERRAT} text-base [font-variation-settings:'wght'_500] text-[#6d440c] whitespace-pre font-normal leading-5 relative shrink-0`}>
-                        {"Pottery"}
-                      </span>
-                      <Home data-figma-id="641:225" text="Nature Experiences" />
-                      <Home data-figma-id="641:226" text="Products" />
-                      <Home data-figma-id="641:227" text="Contact" />
-                    </div>
-                  </div>
-                  <div data-figma-id="641:228" className="relative w-max h-[100px] shrink-0 flex flex-col gap-4">
-                    <span
-                      data-figma-id="641:229"
-                      className={`${FONT_MONTSERRAT} text-[#6d440c] whitespace-pre text-xl font-medium leading-[24.38px] uppercase relative shrink-0 self-stretch`}
-                    >
-                      {"Contact"}
-                    </span>
-                    <span data-figma-id="641:230" className={`${FONT_MONTSERRAT} text-[#6d440c] whitespace-normal text-base font-normal leading-5 min-w-[125px] relative h-[60px] shrink-0 self-stretch`}>
-                      <span className="absolute top-0 left-0 whitespace-pre leading-5 text-left">{"Phone Number\nEmail Address\nLocation"}</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div data-figma-id="641:231" className="border-t border-dashed border-[#6d440c] min-w-0 relative h-0 shrink-0 self-stretch" />
-            </div>
-            <div data-figma-id="641:232" className="flex justify-between min-w-0 items-center relative h-max shrink-0 self-stretch">
-              <div data-figma-id="641:233" className="relative w-[164px] h-max shrink-0 flex gap-3">
-                <SocialMediaIcon data-figma-id="641:234" viewBox="0 0 20 20" iconClassName="w-4 h-4" href="#figma-vector-215" />
-                <SocialMediaIcon data-figma-id="641:237" viewBox="0 0 125.248 128" iconClassName="w-3.5 h-3.5" href="#figma-vector-216" />
-                <SocialMediaIcon data-figma-id="641:240" viewBox="0 0 182.337 127.131" iconClassName="w-5 h-3.5" href="#figma-vector-217" />
-                <SocialMediaIcon data-figma-id="641:243" viewBox="0 0 116.67 220.52" iconClassName="w-2 h-4" href="#figma-vector-218" />
-              </div>
-              <Home data-figma-id="641:246" text="© 2026 A piece of earth. All Rights Reserved." />
-            </div>
-          </div>
-        </div>
+        <Footer />
       </div>
     </>
   );

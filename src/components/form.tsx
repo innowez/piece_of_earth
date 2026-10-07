@@ -12,7 +12,7 @@ export default function Form() {
     return (
         <>
             {/* Begin the Conversation — contact form */}
-            <div data-figma-id="79:831" className="relative w-full bg-[#fff8e7] py-16 sm:py-20 lg:py-28 px-6 sm:px-10 xl:px-[120px] box-border">
+            <div id="contact-form" data-figma-id="79:831" className="relative w-full bg-[#fff8e7] py-16 sm:py-20 lg:py-28 px-6 sm:px-10 xl:px-[120px] box-border">
                 <div className="relative w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 xl:gap-20">
                     {/* Left Cottage Photo */}
                     <div

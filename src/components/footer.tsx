@@ -43,18 +43,18 @@ export default function Footer() {
                                         <Link href="/about" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] hover:opacity-75 transition-opacity font-normal relative shrink-0 no-underline`}>
                                             About Us
                                         </Link>
-                                        <span data-figma-id="641:150" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre font-semibold relative shrink-0`}>
+                                        <Link href="/pottery" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre font-normal relative shrink-0 no-underline`}>
                                             {"Pottery"}
-                                        </span>
-                                        <span className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75`}>
+                                        </Link>
+                                        <Link href="/nature-experiences" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75 no-underline`}>
                                             Nature Experiences
-                                        </span>
-                                        <span className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75`}>
+                                        </Link>
+                                        <Link href="/products" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75 no-underline`}>
                                             Products
-                                        </span>
-                                        <span className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75`}>
+                                        </Link>
+                                        <Link href="#contact-form" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75 no-underline`}>
                                             Contact
-                                        </span>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div data-figma-id="641:154" className="relative w-max h-max shrink-0 flex flex-col gap-4">
