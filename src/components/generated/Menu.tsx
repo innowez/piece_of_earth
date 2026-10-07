@@ -52,7 +52,7 @@ export function Menu({ onClose }: { onClose?: () => void }) {
       <div data-figma-id="513:75" className="flex flex-col min-w-0 gap-8 relative shrink-0 max-w-[480px] mx-auto w-full">
         <NavItem data-figma-id="513:76" text="Home" href="/" onNavigate={onClose} />
         <NavItem data-figma-id="513:77" text="About Us" href="/about" onNavigate={onClose} />
-        <NavItem data-figma-id="513:78" text="Pottery" />
+        <NavItem data-figma-id="513:78" text="Pottery" href="/pottery" onNavigate={onClose} />
         <div data-figma-id="513:79" className="relative w-full h-[38px] shrink-0 flex flex-col gap-[19px]">
           <motion.div
             data-figma-id="451:560"
@@ -65,7 +65,14 @@ export function Menu({ onClose }: { onClose?: () => void }) {
               variants={{ rest: { x: 0 }, hover: { x: 10, color: "#845436" } }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             >
-              {"nature experiences"}
+              <Link
+                href="/nature-experinces"
+                onClick={onClose}
+                // data-figma-id={p["data-figma-id"]}
+                className="no-underline self-stretch"
+              >
+                {"nature experiences"}
+              </Link>
             </motion.span>
             <motion.div
               data-figma-id="451:562"
@@ -84,7 +91,7 @@ export function Menu({ onClose }: { onClose?: () => void }) {
             </motion.div>
           </motion.div>
         </div>
-        <NavItem data-figma-id="513:90" text="Products" />
+        <NavItem data-figma-id="513:90" text="Products" href='/products' onNavigate={onClose} />
         <NavItem data-figma-id="513:80" text="Blogs" />
       </div>
       <motion.div

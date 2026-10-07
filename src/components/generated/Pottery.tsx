@@ -1,16 +1,13 @@
 'use client';
 
 import { useState } from "react";
-import Link from "next/link";
 import {
     FONT_CINZEL,
     FONT_MONTSERRAT,
-    FONT_MONTSERRAT_16C,
-    ROW3,
-    TEXT5,
-    TEXT6,
 } from "@/constant";
 import { Header } from "../header";
+import Form from "../form";
+import Footer from "../footer";
 
 const FAQ_ITEMS = [
     {
@@ -66,17 +63,11 @@ function SocialMediaIcon(p: {
 export function Pottery() {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
     const [showAllFaqs, setShowAllFaqs] = useState(false);
-    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const visibleFaqs = showAllFaqs ? FAQ_ITEMS : FAQ_ITEMS.slice(0, 5);
 
     const toggleFaq = (index: number) => {
         setOpenFaq(openFaq === index ? null : index);
-    };
-
-    const handleFormSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormSubmitted(true);
     };
 
     return (
@@ -185,6 +176,74 @@ export function Pottery() {
                                 </p>
                             </div>
                         </div>
+
+                        {/* Row 3: The Experience (Text Left, Image Right) */}
+                        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 xl:gap-24">
+                            <div className="w-full lg:max-w-[440px] xl:max-w-[460px] flex flex-col gap-4">
+                                <p className={`${FONT_MONTSERRAT} text-[#364139] text-base sm:text-lg leading-[1.8] font-normal`}>
+                                    {"Our studio grounds are designed as a sanctuary. Between working with clay, sit beneath the trees, listen to the wild rhythms of the land, and let the quiet surrounding greenery restore your mind and energy."}
+                                </p>
+                            </div>
+                            <div className="w-full lg:max-w-[560px] flex flex-col items-center">
+                                <div className="relative w-full aspect-[16/10] sm:aspect-[3/2] overflow-hidden bg-[#e5dcce]">
+                                    <img
+                                        src="/images/e308f07ee7ac0e7d682b6d3c273acc0bc01ce87b.jpg"
+                                        alt="Enfolded by the Wild"
+                                        className="w-full h-full object-cover object-[50%_62%] transition-transform duration-500 hover:scale-105"
+                                    />
+                                </div>
+                                <span className={`${FONT_MONTSERRAT} text-base sm:text-[17px] text-[#364139] text-center font-normal mt-4 block`}>
+                                    {"Enfolded by the Wild"}
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Row 4: Wheel Throwing (Image Left, Text Right) */}
+                        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-16 xl:gap-24">
+                            <div className="w-full lg:max-w-[560px] flex flex-col items-center">
+                                <div className="relative w-full aspect-[16/10] sm:aspect-[3/2] overflow-hidden bg-[#e5dcce]">
+                                    <img
+                                        src="/images/e308f07ee7ac0e7d682b6d3c273acc0bc01ce87b.jpg"
+                                        alt="The Joy of Wheel Throwing"
+                                        className="w-full h-full object-cover object-[50%_62%] transition-transform duration-500 hover:scale-105"
+                                    />
+                                </div>
+                                <span className={`${FONT_MONTSERRAT} text-base sm:text-[17px] text-[#364139] text-center font-normal mt-4 block`}>
+                                    {"An Immersion That Stays With You"}
+                                </span>
+                            </div>
+                            <div className="w-full lg:max-w-[440px] xl:max-w-[460px] flex flex-col gap-4">
+                                <p className={`${FONT_MONTSERRAT} text-[#364139] text-base sm:text-lg leading-[1.8] font-normal`}>
+                                    {"Every piece you create is carefully dried and fired in our studio kiln for you to cherish forever. "}
+
+                                </p>
+                                <p className={`${FONT_MONTSERRAT} text-[#364139] text-base sm:text-lg leading-[1.8] font-normal`}>
+                                    {"N.B. We fire our pottery in batches to conserve energy and care for each piece. Please allow a minimum of 2–3 months for your finished work to be dried, fired, and ready."}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="w-full flex justify-center mt-10">
+                        <a
+                            href="https://wa.me/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-figma-id="133:188"
+                            className="mt-5 sm:mt-7 relative inline-flex items-center justify-center bg-[#845436] hover:bg-[#6e442a] text-[#fff8e7] px-6 py-2.5 sm:py-3 gap-2.5 transition-colors duration-200 cursor-pointer shadow-sm group no-underline"
+                        >
+                            <div data-figma-id="72:284" className="relative w-5 h-5 shrink-0 overflow-hidden">
+                                <svg data-figma-id="72:285" viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
+                                    <use href="#figma-derived-14" fill="#fff8e7" />
+                                </svg>
+                                <svg data-figma-id="72:286" viewBox="0 0 10.113 9.306" preserveAspectRatio="none" className="absolute left-[24.909%] top-[26.578%] w-[50.565%] h-[46.532%]">
+                                    <use href="#figma-derived-15" fill="#fff8e7" />
+                                </svg>
+                            </div>
+                            <span data-figma-id="72:287" className={`${FONT_MONTSERRAT} text-[15px] sm:text-[16px] leading-[20px] text-[#fff8e7] font-medium relative shrink-0`}>
+                                {"Book Your Slot"}
+                            </span>
+                        </a>
                     </div>
                 </div>
 
@@ -246,139 +305,10 @@ export function Pottery() {
                 </div>
 
                 {/* Begin the Conversation — contact form */}
-                <div data-figma-id="79:831" className="relative w-full bg-[#fff8e7] py-16 sm:py-20 lg:py-28 px-6 sm:px-10 xl:px-[120px] box-border">
-                    <div className="relative w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 xl:gap-20">
-                        {/* Left Cottage Photo */}
-                        <div
-                            data-figma-id="79:767"
-                            className="relative w-full lg:w-[500px] xl:w-[563px] h-[340px] sm:h-[440px] lg:h-[524px] shrink-0 bg-[#d9d9d9] bg-[url('/images/e45c144a-179d-45d9-a65e-d96cd694e95c.jpg')] [background-size:211.512%_131.107%] [background-position:22.559%_9.392%] bg-no-repeat shadow-sm"
-                        />
-
-                        {/* Right Form */}
-                        <div data-figma-id="79:830" className="relative w-full lg:max-w-[560px] xl:max-w-[589px] flex flex-col gap-8 sm:gap-9">
-                            <h2 data-figma-id="79:813" className={`${FONT_CINZEL} text-[#6d440c] text-3xl sm:text-4xl lg:text-[40px] leading-[1.25] uppercase tracking-wide font-normal`}>
-                                {"Begin the"}<br />{"Conversation"}
-                            </h2>
-
-                            <form onSubmit={handleFormSubmit} className="flex flex-col gap-6 sm:gap-7 w-full">
-                                <div data-figma-id="79:816" className="border-b border-[#5f7053] pb-2 sm:pb-3 w-full">
-                                    <input
-                                        type="text"
-                                        required
-                                        data-figma-id="79:815"
-                                        className={`${FONT_MONTSERRAT} ${TEXT6} text-base placeholder-[#364139] w-full bg-transparent focus:outline-none focus:placeholder-opacity-60`}
-                                        placeholder="Full Name"
-                                    />
-                                </div>
-
-                                <div data-figma-id="79:821" className="flex flex-col sm:flex-row gap-6 sm:gap-7 w-full">
-                                    <div data-figma-id="79:817" className="border-b border-[#5f7053] pb-2 sm:pb-3 flex-1">
-                                        <input
-                                            type="email"
-                                            required
-                                            data-figma-id="79:818"
-                                            className={`${FONT_MONTSERRAT} ${TEXT6} text-base placeholder-[#364139] w-full bg-transparent focus:outline-none focus:placeholder-opacity-60`}
-                                            placeholder="Email Address"
-                                        />
-                                    </div>
-                                    <div data-figma-id="79:819" className="border-b border-[#5f7053] pb-2 sm:pb-3 flex-1">
-                                        <input
-                                            type="tel"
-                                            data-figma-id="79:820"
-                                            className={`${FONT_MONTSERRAT} ${TEXT6} text-base placeholder-[#364139] w-full bg-transparent focus:outline-none focus:placeholder-opacity-60`}
-                                            placeholder="Phone Number"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div data-figma-id="79:822" className="border-b border-[#5f7053] pb-2 sm:pb-3 w-full">
-                                    <textarea
-                                        rows={1}
-                                        data-figma-id="79:823"
-                                        className={`${FONT_MONTSERRAT} ${TEXT6} text-base placeholder-[#364139] w-full bg-transparent focus:outline-none focus:placeholder-opacity-60 resize-none`}
-                                        placeholder="Message"
-                                    />
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    data-figma-id="79:824"
-                                    className={`relative w-[108px] h-12 shrink-0 bg-[#845436] hover:bg-[#6e442a] [box-shadow:inset_0_0_0_1px_#845436] ${ROW3} transition-colors duration-200 cursor-pointer shadow-sm mt-1 border-none`}
-                                >
-                                    <span data-figma-id="79:825" className={`${FONT_MONTSERRAT_16C} relative shrink-0`}>
-                                        {"Submit"}
-                                    </span>
-                                </button>
-                            </form>
-
-                            <p data-figma-id="79:827" className={`${FONT_MONTSERRAT} ${TEXT5} text-[14px] sm:text-base font-normal leading-relaxed`}>
-                                {formSubmitted
-                                    ? "Thank you! Your message has been received. We'll connect with you shortly."
-                                    : "Thank you for reaching out. We'll connect with you shortly via WhatsApp or email."}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <Form />
 
                 {/* Footer */}
-                <div data-figma-id="641:137" className="relative w-full bg-[#f3e8d5] shadow-[inset_0_1px_0_0_#6d440c] flex flex-col box-border px-6 xl:px-[120px] py-12 lg:py-[72px] gap-2.5">
-                    <div data-figma-id="641:138" className="relative w-full flex flex-col gap-8 lg:gap-10 max-w-[1200px] mx-auto">
-                        <div data-figma-id="641:139" className="flex flex-col min-w-0 gap-8 lg:gap-10 relative h-max shrink-0 self-stretch">
-                            <div data-figma-id="641:140" className="flex flex-col sm:flex-row justify-between min-w-0 relative h-max shrink-0 self-stretch flex-wrap gap-8">
-                                <div data-figma-id="641:141" className="relative w-full max-w-[296px] h-[86px] sm:h-[114px] shrink-0 flex flex-col gap-8">
-                                    <div data-figma-id="641:142" className="relative w-full max-w-[370px] h-[86px] sm:h-[114px] shrink-0 bg-[url('/images/a0cff4ec-b706-4f7a-bf6e-e2aac10b18d2.png')] bg-[length:117.465%_254.047%] bg-[position:44.663%_61.292%] bg-no-repeat" />
-                                </div>
-                                <div data-figma-id="641:144" className="relative w-full sm:w-max h-max shrink-0 flex flex-col sm:flex-row justify-start sm:justify-end gap-8 sm:gap-[60px] lg:gap-[100px]">
-                                    <div data-figma-id="641:145" className="relative w-max h-max shrink-0 flex flex-col gap-4">
-                                        <span data-figma-id="641:146" className={`${FONT_MONTSERRAT} text-[#6d440c] whitespace-pre text-[20px] font-medium leading-[24.38px] uppercase relative shrink-0 self-stretch`}>
-                                            {"Quick Links"}
-                                        </span>
-                                        <div data-figma-id="641:147" className="flex flex-col min-w-[157px] gap-3 relative h-max shrink-0 self-stretch">
-                                            <Link href="/" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] hover:opacity-75 transition-opacity font-normal relative shrink-0 no-underline`}>
-                                                Home
-                                            </Link>
-                                            <Link href="/about" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] hover:opacity-75 transition-opacity font-normal relative shrink-0 no-underline`}>
-                                                About Us
-                                            </Link>
-                                            <span data-figma-id="641:150" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre font-semibold relative shrink-0`}>
-                                                {"Pottery"}
-                                            </span>
-                                            <span className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75`}>
-                                                Nature Experiences
-                                            </span>
-                                            <span className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75`}>
-                                                Products
-                                            </span>
-                                            <span className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] font-normal relative shrink-0 cursor-pointer hover:opacity-75`}>
-                                                Contact
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div data-figma-id="641:154" className="relative w-max h-max shrink-0 flex flex-col gap-4">
-                                        <span data-figma-id="641:155" className={`${FONT_MONTSERRAT} text-[#6d440c] whitespace-pre text-[20px] font-medium leading-[24.38px] uppercase relative shrink-0 self-stretch`}>
-                                            {"Contact"}
-                                        </span>
-                                        <span data-figma-id="641:156" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre-line font-normal min-w-[125px] relative h-max shrink-0 self-stretch`}>
-                                            {"Phone Number\nEmail Address\nLocation"}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-figma-id="641:157" className="border-t border-dashed border-[#6d440c] min-w-0 relative h-0 shrink-0 self-stretch" />
-                        </div>
-                        <div data-figma-id="641:158" className="flex flex-col-reverse sm:flex-row justify-between items-center min-w-0 relative h-max shrink-0 self-stretch gap-4">
-                            <div data-figma-id="641:159" className="relative w-[164px] h-max shrink-0 flex gap-3">
-                                <SocialMediaIcon data-figma-id="641:160" viewBox="0 0 20 20" iconClassName="w-4 h-4" href="#figma-vector-136" />
-                                <SocialMediaIcon data-figma-id="641:163" viewBox="0 0 125.248 128" iconClassName="w-3.5 h-3.5" href="#figma-vector-137" />
-                                <SocialMediaIcon data-figma-id="641:166" viewBox="0 0 182.337 127.131" iconClassName="w-5 h-3.5" href="#figma-vector-138" />
-                                <SocialMediaIcon data-figma-id="641:169" viewBox="0 0 116.67 220.52" iconClassName="w-2 h-4" href="#figma-vector-139" />
-                            </div>
-                            <span data-figma-id="641:172" className={`${FONT_MONTSERRAT} text-[16px] leading-[20px] text-[#6d440c] whitespace-pre text-center sm:text-left font-normal relative shrink-0`}>
-                                {"© 2026 A piece of earth. All Rights Reserved."}
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                <Footer />
             </div>
         </>
     );
