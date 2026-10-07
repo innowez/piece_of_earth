@@ -1,3 +1,4 @@
+'use client'
 import { FONT_MONTSERRAT } from "@/constant";
 import Link from "next/link";
 

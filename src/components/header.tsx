@@ -1,3 +1,5 @@
+"use client"
+
 import SiteMenu from "./site-menu"
 import { FONT_MONTSERRAT } from "@/constant";
 export const Header = () => {
