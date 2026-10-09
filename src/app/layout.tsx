@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: 'A Piece of Earth',
   description:
     'A pottery studio and sanctuary in Wayanad, born from a deep love for the living world.',
+  icons: {
+    icon: '/peace_of_earth_icon.png',
+    shortcut: '/peace_of_earth_icon.png',
+    apple: '/peace_of_earth_icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -15,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/peace_of_earth_icon.png" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

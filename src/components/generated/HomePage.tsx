@@ -135,11 +135,22 @@ export function HomePage() {
         {/* Header */}
         <Header />
 
-        {/* Hero — full screen */}
+        {/* Hero — full screen video loop */}
         <div
           data-figma-id="72:280"
-          className="relative w-full h-[calc(100vh-88px)] bg-[url('/images/e0096f1e-32c9-4ff5-90f9-2777e10acbc8.png')] bg-cover bg-center bg-no-repeat"
-        />
+          className="relative w-full h-[calc(100vh-68px)] sm:h-[calc(100vh-88px)] overflow-hidden"
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/e0096f1e-32c9-4ff5-90f9-2777e10acbc8.png"
+            className="w-full h-full object-cover"
+          >
+            <source src="/landing_video.mp4" type="video/mp4" />
+          </video>
+        </div>
 
         {/* Finding Your Piece of Earth */}
         <div data-figma-id="79:763" className="relative w-full max-w-[996px] mx-auto mt-12 sm:mt-16 md:mt-24 lg:mt-[120px] px-6 sm:px-8 lg:px-0 flex flex-col items-center gap-8 md:gap-12 box-border">
