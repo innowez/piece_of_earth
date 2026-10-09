@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from 'react';
 import Footer from '../footer';
 import Form from '../form';
 import { Header } from '../header';
@@ -21,55 +24,103 @@ const ROW1 = "flex py-2.5 px-3 box-border items-center justify-center gap-2";
 const ROW3 = "flex py-2.5 px-6 box-border items-center justify-center gap-2";
 const COL1 = "flex flex-col";
 
+const PRODUCTS = [
+  {
+    name: "Large Terracotta Planters",
+    description: "Terracotta floor planters designed for garden spaces and open spaces.",
+    image: "/images/5fe47613-902a-4e9a-bd47-4addf9a17e3e.jpg",
+  },
+  {
+    name: "The Natural History Desk",
+    description: "Terracotta pen holders etched with bold, sculptural stories of the living world and ancient time.",
+    image: "/images/5fe47613-902a-4e9a-bd47-4addf9a17e3e.jpg",
+  },
+  {
+    name: "Ceramic Planter",
+    description: "Crafted from natural clay and finished by hand, this ceramic planter brings warmth and character to any space. Designed for both indoor and outdoor plants, each piece celebrates the subtle imperfections that make handmade pottery unique.",
+    image: "/images/5fe47613-902a-4e9a-bd47-4addf9a17e3e.jpg",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote: "“I came to learn pottery and left with a completely different appreciation for slowing down and creating with my hands”",
+    author: "ANANYA",
+  },
+  {
+    quote: "“A truly magical experience tucked away in Wayanad. The studio connects you deeply to nature through art.”",
+    author: "KAVYA",
+  },
+  {
+    quote: "“The calm, the clay, the green surroundings — piece of earth is a soulful sanctuary that stays with you.”",
+    author: "ROHIT",
+  },
+  {
+    quote: "“Every detail in the pottery workshop was thoughtful, mindful, and incredibly inspiring.”",
+    author: "MEERA",
+  },
+];
+
 function Frame291(p: { "data-figma-id": string; bgClassName: string; text: string }) {
   return (
-    <div data-figma-id={p["data-figma-id"]} className="relative w-full max-w-[564px] min-w-0 flex-1 h-[737px] flex flex-col gap-4">
-      <div data-figma-id="443:293" className="flex flex-col min-w-0 gap-4 relative h-[655px] shrink-0 self-stretch">
-        <div data-figma-id="443:277" className={`${p.bgClassName} min-w-0 relative h-[617px] shrink-0 self-stretch`} />
-        <span data-figma-id="443:280" className={`${FONT_CINZEL_24} min-w-0 relative shrink-0 self-stretch`}>
+    <div data-figma-id={p["data-figma-id"]} className="relative w-full max-w-[564px] min-w-0 flex-1 flex flex-col gap-4">
+      <div data-figma-id="443:293" className="flex flex-col min-w-0 gap-4 relative shrink-0 self-stretch">
+        <div data-figma-id="443:277" className={`${p.bgClassName} min-w-0 relative w-full aspect-square md:aspect-auto md:h-[617px] shrink-0 self-stretch`} />
+        <h3 data-figma-id="443:280" className={`${FONT_CINZEL} text-xl sm:text-2xl leading-[32.352px] text-[#6d440c] min-w-0 relative shrink-0 self-stretch text-center tracking-[0.02em]`}>
           {p.text}
-        </span>
+        </h3>
       </div>
-      <div data-figma-id="443:282" className="flex min-w-0 justify-between gap-4 relative h-[56px] shrink-0 self-stretch">
-        <div
+      <div data-figma-id="443:282" className="flex flex-col sm:flex-row min-w-0 justify-between gap-3 sm:gap-4 relative shrink-0 self-stretch">
+        <button
+          type="button"
           data-figma-id="443:287"
-          className={`bg-[#845436] [box-shadow:inset_0_0_0_1px_#845436] ${ROW1} w-1/2 flex-1 min-w-0 relative h-12 shrink-0 self-stretch`}
+          className={`bg-[#845436] [box-shadow:inset_0_0_0_1px_#845436] ${ROW1} w-full sm:w-1/2 sm:flex-1 min-w-0 relative h-12 shrink-0 cursor-pointer hover:opacity-95 transition-opacity`}
         >
           <div data-figma-id="443:288" className="relative w-5 h-5 shrink-0 overflow-hidden">
-            <svg data-figma-id="443:289" viewBox="0 0 256 257.147" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
-              <use href="#figma-vector-1" fill="#fff8e7" />
+            <svg data-figma-id="443:289" viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
+              <use href="#figma-derived-14" fill="#fff8e7" />
             </svg>
             <svg
               data-figma-id="443:290"
-              viewBox="0 0 129.447 120.054"
+              viewBox="0 0 10.113 9.306"
               preserveAspectRatio="none"
               className="absolute left-[24.909%] top-[26.578%] w-[50.565%] h-[46.532%]"
             >
-              <use href="#figma-vector-2" fill="#fff8e7" />
+              <use href="#figma-derived-15" fill="#fff8e7" />
             </svg>
           </div>
-          <span data-figma-id="443:291" className={`${FONT_MONTSERRAT_18B} relative shrink-0`}>
+          <span data-figma-id="443:291" className={`${FONT_MONTSERRAT_18B} relative shrink-0 text-base sm:text-lg`}>
             {"Book Your Slot"}
           </span>
-        </div>
-        <div
+        </button>
+        <button
+          type="button"
           data-figma-id="443:283"
-          className={`[box-shadow:inset_0_0_0_1px_#845436] ${ROW1} min-w-0 w-1/2 flex-1 relative h-12 shrink-0 self-stretch`}
+          className={`[box-shadow:inset_0_0_0_1px_#845436] ${ROW1} min-w-0 w-full sm:w-1/2 sm:flex-1 relative h-12 shrink-0 cursor-pointer hover:bg-[#845436]/10 transition-colors`}
         >
-          <span data-figma-id="443:286" className={`${FONT_MONTSERRAT_18} relative shrink-0`}>
+          <span data-figma-id="443:286" className={`${FONT_MONTSERRAT_18} relative shrink-0 text-base sm:text-lg`}>
             {"Learn More"}
           </span>
-        </div>
+        </button>
       </div>
     </div>
   );
 }
 
 export function HomePage() {
+  const [currentProduct, setCurrentProduct] = useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const product = PRODUCTS[currentProduct];
+  const testimonial = TESTIMONIALS[currentTestimonial];
+
   return (
     <>
       <svg aria-hidden="true" data-mp-layer-tree-ignore="true" className="absolute w-0 h-0 overflow-hidden">
         <defs>
+          <path id="figma-vector-148" d="M5.261 0.061C5.986 -0.02 6.415 -0.02 7.194 0.061C8.573 0.265 9.851 0.902 10.844 1.881C10.173 2.515 9.511 3.158 8.858 3.811C7.607 2.751 6.211 2.506 4.67 3.077C3.539 3.597 2.752 4.439 2.308 5.605C1.582 5.065 0.866 4.512 0.16 3.947C0.111 3.921 0.055 3.911 0 3.92C1.122 1.756 2.875 0.47 5.26 0.06" fillRule="evenodd" />
+          <path id="figma-vector-149" d="M0.696 0.003C0.753 -0.005 0.807 0.004 0.857 0.03C1.564 0.595 2.28 1.148 3.005 1.688C2.891 2.142 2.819 2.606 2.79 3.073C2.815 3.525 2.887 3.969 3.005 4.404L0.75 6.199C-0.232 4.147 -0.25 2.082 0.696 0.003Z" fillRule="evenodd" />
+          <path id="figma-vector-150" d="M4.563 6.584C3.861 5.964 3.126 5.384 2.361 4.844C3.128 4.302 3.593 3.56 3.757 2.616L0 2.616L0 0.007C2.167 -0.011 4.332 0.007 6.497 0.062C6.908 2.292 6.433 4.302 5.074 6.094C4.912 6.266 4.741 6.429 4.563 6.584Z" fillRule="evenodd" />
+          <path id="figma-vector-151" d="M2.255 0C3.075 2.038 4.578 2.989 6.765 2.854C7.379 2.783 7.967 2.569 8.483 2.228C9.248 2.769 9.982 3.349 10.685 3.968C9.572 4.968 8.152 5.562 6.658 5.652C6.319 5.679 5.977 5.679 5.638 5.652C3.093 5.352 1.213 4.066 0 1.794L2.255 0Z" fillRule="evenodd" />
           <path id="figma-vector-136" d="M15.34 3.46C15.103 3.46 14.871 3.53 14.673 3.662C14.476 3.794 14.322 3.982 14.231 4.201C14.141 4.42 14.117 4.661 14.163 4.894C14.209 5.127 14.324 5.341 14.491 5.509C14.659 5.676 14.873 5.791 15.106 5.837C15.339 5.883 15.58 5.859 15.799 5.769C16.018 5.678 16.206 5.524 16.338 5.327C16.47 5.129 16.54 4.897 16.54 4.66C16.54 4.342 16.414 4.037 16.189 3.811C15.963 3.586 15.658 3.46 15.34 3.46ZM19.94 5.88C19.92 5.05 19.765 4.229 19.48 3.45C19.227 2.783 18.831 2.178 18.32 1.68C17.825 1.167 17.22 0.774 16.55 0.53C15.773 0.236 14.951 0.077 14.12 0.06C13.06 0 12.72 0 10 0C7.28 0 6.94 0 5.88 0.06C5.049 0.077 4.227 0.236 3.45 0.53C2.782 0.777 2.177 1.17 1.68 1.68C1.167 2.175 0.774 2.78 0.53 3.45C0.236 4.227 0.077 5.049 0.06 5.88C0 6.94 0 7.28 0 10C0 12.72 0 13.06 0.06 14.12C0.077 14.951 0.236 15.773 0.53 16.55C0.774 17.22 1.167 17.825 1.68 18.32C2.177 18.83 2.782 19.223 3.45 19.47C4.227 19.764 5.049 19.923 5.88 19.94C6.94 20 7.28 20 10 20C12.72 20 13.06 20 14.12 19.94C14.951 19.923 15.773 19.764 16.55 19.47C17.22 19.226 17.825 18.833 18.32 18.32C18.832 17.823 19.228 17.218 19.48 16.55C19.765 15.771 19.92 14.95 19.94 14.12C19.94 13.06 20 12.72 20 10C20 7.28 20 6.94 19.94 5.88ZM18.14 14C18.133 14.635 18.018 15.264 17.8 15.86C17.64 16.295 17.384 16.688 17.05 17.01C16.725 17.34 16.333 17.596 15.9 17.76C15.304 17.978 14.675 18.093 14.04 18.1C13.04 18.15 12.67 18.16 10.04 18.16C7.41 18.16 7.04 18.16 6.04 18.1C5.381 18.113 4.724 18.011 4.1 17.8C3.686 17.627 3.312 17.372 3 17.05C2.668 16.729 2.415 16.335 2.26 15.9C2.015 15.295 1.88 14.652 1.86 14C1.86 13 1.8 12.63 1.8 10C1.8 7.37 1.8 7 1.86 6C1.864 5.351 1.982 4.708 2.21 4.1C2.386 3.678 2.656 3.302 3 3C3.303 2.655 3.679 2.382 4.1 2.2C4.709 1.979 5.352 1.864 6 1.86C7 1.86 7.37 1.8 10 1.8C12.63 1.8 13 1.8 14 1.86C14.635 1.867 15.264 1.982 15.86 2.2C16.314 2.369 16.722 2.643 17.05 3C17.377 3.308 17.633 3.683 17.8 4.1C18.022 4.709 18.137 5.352 18.14 6C18.19 7 18.2 7.37 18.2 10C18.2 12.63 18.19 13 18.14 14ZM10 4.87C8.986 4.872 7.995 5.175 7.153 5.739C6.31 6.304 5.654 7.106 5.268 8.044C4.881 8.981 4.781 10.012 4.98 11.007C5.179 12.001 5.668 12.915 6.386 13.631C7.104 14.347 8.018 14.835 9.013 15.032C10.008 15.229 11.039 15.127 11.975 14.739C12.912 14.35 13.713 13.692 14.276 12.849C14.839 12.006 15.14 11.014 15.14 10C15.141 9.325 15.009 8.657 14.751 8.033C14.493 7.409 14.115 6.843 13.637 6.366C13.159 5.889 12.592 5.512 11.968 5.255C11.344 4.998 10.675 4.867 10 4.87ZM10 13.33C9.341 13.33 8.698 13.135 8.15 12.769C7.602 12.403 7.176 11.883 6.923 11.274C6.671 10.666 6.605 9.996 6.734 9.35C6.862 8.704 7.18 8.111 7.645 7.645C8.111 7.18 8.704 6.862 9.35 6.734C9.996 6.605 10.666 6.671 11.274 6.923C11.883 7.176 12.403 7.602 12.769 8.15C13.135 8.698 13.33 9.341 13.33 10C13.33 10.437 13.244 10.87 13.077 11.274C12.909 11.678 12.664 12.045 12.355 12.355C12.045 12.664 11.678 12.909 11.274 13.077C10.87 13.244 10.437 13.33 10 13.33Z" fillRule="nonzero" />
           <path id="figma-vector-137" d="M74.54 54.2L121.166 0L110.116 0L69.632 47.06L37.296 0L0 0L48.898 71.164L0 128L11.05 128L53.804 78.303L87.952 128L125.248 128L74.537 54.2L74.54 54.2ZM59.406 71.79L54.451 64.704L15.031 8.318L32.003 8.318L63.814 53.824L68.768 60.91L110.121 120.06L93.151 120.06L59.406 71.793L59.406 71.79Z" fillRule="nonzero" />
           <path id="figma-vector-138" d="M180.783 34.08C179.663 23.27 177.254 11.32 168.384 5.04C161.514 0.17 152.483 -0.01 144.053 0C126.233 0.01 108.403 0.03 90.583 0.04C73.443 0.06 56.303 0.07 39.163 0.09C32.003 0.1 25.043 -0.46 18.393 2.64C12.683 5.3 8.213 10.36 5.523 15.99C1.793 23.82 1.013 32.69 0.563 41.35C-0.267 57.12 -0.177 72.931 0.813 88.691C1.543 100.191 3.393 112.9 12.283 120.23C20.163 126.72 31.283 127.04 41.503 127.05C73.943 127.08 106.393 127.11 138.843 127.13C143.003 127.14 147.343 127.06 151.583 126.6C159.923 125.7 167.873 123.31 173.233 117.13C178.643 110.9 180.033 102.23 180.853 94.02C182.853 74.1 182.833 53.99 180.783 34.08ZM71.823 91.49L71.823 35.64L120.184 63.56L71.823 91.49Z" fillRule="nonzero" />
@@ -91,50 +142,58 @@ export function HomePage() {
         />
 
         {/* Finding Your Piece of Earth */}
-        <div data-figma-id="79:763" className="relative w-full max-w-[996px] mx-auto mt-[120px] flex flex-col items-center gap-12">
-          <span data-figma-id="75:541" className={`${FONT_CINZEL} ${TEXT7} text-[#6d440c] min-w-0 relative shrink-0 self-stretch`}>
-            {"Finding Your Piece of Earth"}
-          </span>
-          <div data-figma-id="79:762" className="min-w-0 flex items-center gap-[82px] relative h-max shrink-0 self-stretch">
-            <div data-figma-id="79:761" className="flex flex-col min-w-0 gap-12 relative h-[264px] flex-1">
-              <span data-figma-id="76:553" className={`${FONT_MONTSERRAT} ${TEXT5} text-lg font-normal text-justify min-w-0 relative h-[168px] shrink-0 self-stretch`}>
-                <span className="absolute top-0 left-0 whitespace-pre leading-6 text-left">
-                  {"We are a pottery studio and a sanctuary, tucked \naway in the mystical Wayanad, born from a deep \nlove for the living world.\n\nHere, we gather in mutual care to learn nature’s \nlanguage through art and honour the delicate life \naround us."}
-                </span>
-              </span>
-              <div data-figma-id="76:567" className={`relative w-[135px] h-12 shrink-0 [box-shadow:inset_0_0_0_1px_#845436] ${ROW3}`}>
+        <div data-figma-id="79:763" className="relative w-full max-w-[996px] mx-auto mt-12 sm:mt-16 md:mt-24 lg:mt-[120px] px-6 sm:px-8 lg:px-0 flex flex-col items-center gap-8 md:gap-12 box-border">
+          <h2
+            data-figma-id="75:541"
+            className={`${FONT_CINZEL} text-[#6d440c] text-3xl sm:text-4xl md:text-5xl leading-tight sm:leading-snug md:leading-[65px] text-center tracking-[0.02em] shrink-0 self-stretch max-w-[320px] sm:max-w-none mx-auto`}
+          >
+            {"Finding Your Piece Of Earth"}
+          </h2>
+          <div data-figma-id="79:762" className="min-w-0 flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-[82px] relative w-full shrink-0">
+            <div data-figma-id="79:761" className="flex flex-col min-w-0 gap-6 sm:gap-8 lg:gap-12 relative w-full lg:flex-1">
+              <p
+                data-figma-id="76:553"
+                className={`${FONT_MONTSERRAT} text-[#364139] text-[15px] sm:text-base md:text-lg font-normal leading-relaxed sm:leading-[26px] md:leading-[30px] text-left min-w-0 shrink-0 self-stretch`}
+              >
+                We are a nature art studio and a sanctuary, tucked away in the mystical Wayanad, born from a deep love for the living world. <span className='hidden lg:block'> <br /></span> Here, we gather in mutual care to learn nature’s language through art and honour the delicate life around us.
+              </p>
+              <button
+                type="button"
+                data-figma-id="76:567"
+                className={`relative w-[135px] h-12 shrink-0 self-start [box-shadow:inset_0_0_0_1px_#845436] ${ROW3} hover:bg-[#845436]/5 transition-colors cursor-pointer`}
+              >
                 <span data-figma-id="76:571" className={`${FONT_MONTSERRAT} ${TEXT1} text-[#6d440c] text-lg font-medium relative shrink-0`}>
                   {"Our Story"}
                 </span>
-              </div>
+              </button>
             </div>
             <div
               data-figma-id="76:552"
-              className="bg-[url('/images/2a63cd7b-b07a-4fe5-a73b-88e4ad69b20b.jpg')] bg-cover bg-center bg-no-repeat min-w-0 relative h-[457px] flex-1"
+              className="bg-[url('/images/2a63cd7b-b07a-4fe5-a73b-88e4ad69b20b.jpg')] bg-cover bg-center bg-no-repeat w-full lg:flex-1 h-[320px] sm:h-[400px] lg:h-[457px] shrink-0"
             />
           </div>
         </div>
 
         {/* Experiences */}
-        <div data-figma-id="443:322" className="relative w-full mt-[120px] bg-[#f3e8d5] flex flex-col py-[72px] px-6 xl:px-[120px] box-border gap-12">
-          <div data-figma-id="443:321" className="flex flex-col min-w-0 items-center gap-4 relative h-max shrink-0 self-stretch">
-            <span data-figma-id="443:51" className={`${FONT_CINZEL} ${TEXT7} text-[#6d440c] min-w-0 relative shrink-0 self-stretch`}>
-              {"experiences"}
-            </span>
-            <p className={`${FONT_MONTSERRAT} ${TEXT5} text-lg font-normal text-center whitespace-pre-line w-full max-w-[1200px] mx-auto`}>
-              {"Nurturing, intimate art space that invites you to learn the language of the\nearth and discover a deeper connection through slow, mindful craft."}
+        <div data-figma-id="443:322" className="relative w-full mt-12 sm:mt-16 md:mt-24 lg:mt-[120px] bg-[#f3e8d5] flex flex-col py-10 sm:py-14 md:py-[72px] px-5 sm:px-8 xl:px-[120px] box-border gap-8 sm:gap-10 md:gap-12">
+          <div data-figma-id="443:321" className="flex flex-col min-w-0 items-center gap-3 sm:gap-4 relative h-max shrink-0 self-stretch">
+            <h2 data-figma-id="443:51" className={`${FONT_CINZEL} text-[#6d440c] text-3xl sm:text-4xl md:text-5xl leading-tight sm:leading-snug md:leading-[65px] text-center tracking-[0.02em] min-w-0 relative shrink-0 self-stretch`}>
+              {"Experiences"}
+            </h2>
+            <p className={`${FONT_MONTSERRAT} text-[#364139] text-[13px] sm:text-base md:text-lg font-normal text-center leading-relaxed sm:leading-6 w-full max-w-[340px] sm:max-w-[540px] md:max-w-[760px] xl:max-w-[1200px] mx-auto`}>
+              {"Nurturing, intimate art space that invites you to learn the language of the earth and discover a deeper connection through slow, mindful craft."}
             </p>
           </div>
-          <div data-figma-id="443:319" className="min-w-0 flex items-center justify-center gap-9 relative h-max shrink-0 self-stretch">
+          <div data-figma-id="443:319" className="min-w-0 flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-9 relative h-max shrink-0 self-stretch">
             <Frame291
               data-figma-id="443:294"
-              bgClassName="bg-[url('/images/8f1a0111-5f93-442e-850a-f5be07cd0613.jpg')] [background-size:100%_134.142%] [background-position:0%_95.613%] bg-no-repeat"
+              bgClassName="bg-[url('/images/8f1a0111-5f93-442e-850a-f5be07cd0613.jpg')] bg-cover bg-center md:[background-size:100%_134.142%] md:[background-position:0%_95.613%] bg-no-repeat"
               text="Pottery"
             />
             <Frame291
               data-figma-id="443:295"
-              bgClassName="bg-[url('/images/d3fbae90-efca-48e4-810c-bff2d5063df0.jpg')] [background-size:142.802%_100%] [background-position:41.64%_0%] bg-no-repeat"
-              text="Nature journaling"
+              bgClassName="bg-[url('/images/d3fbae90-efca-48e4-810c-bff2d5063df0.jpg')] bg-cover bg-center md:[background-size:142.802%_100%] md:[background-position:41.64%_0%] bg-no-repeat"
+              text="Nature Experiences"
             />
             {/* <Frame291
               data-figma-id="443:307"
@@ -165,113 +224,82 @@ export function HomePage() {
         </div> */}
 
         {/* Products */}
-        <div data-figma-id="443:456" className="relative w-full max-w-[1183px] mx-auto mt-[120px] flex flex-col items-center gap-12">
-          <div data-figma-id="443:342" className="relative w-full max-w-[704px] shrink-0 flex flex-col gap-5">
-            <span data-figma-id="443:343" className={`${FONT_CINZEL} text-[#6d440c] lowercase ${TEXT7} min-w-0 relative shrink-0 self-stretch`}>
-              {"PRODUCTS"}
-            </span>
-            <p className={`${FONT_MONTSERRAT} ${TEXT5} text-base font-normal text-center whitespace-pre-line min-w-0 relative shrink-0 self-stretch`}>
-              {"Our curated collection brings a piece of the earth into your home through small-batch, handcrafted ceramics and terracotta pieces inspired by the delicate beauty of the wild."}
+        <div data-figma-id="443:456" className="relative w-full max-w-[1183px] mx-auto mt-12 sm:mt-16 md:mt-24 lg:mt-[120px] px-6 sm:px-8 xl:px-0 flex flex-col items-center gap-8 sm:gap-10 md:gap-12 box-border">
+          <div data-figma-id="443:342" className="relative w-full max-w-[704px] shrink-0 flex flex-col gap-3 sm:gap-4 md:gap-5 items-center">
+            <h2 data-figma-id="443:343" className={`${FONT_CINZEL} text-[#6d440c] text-3xl sm:text-4xl md:text-5xl leading-tight sm:leading-snug md:leading-[65px] text-center tracking-[0.02em] shrink-0 self-stretch`}>
+              {"Products"}
+            </h2>
+            <p className={`${FONT_MONTSERRAT} text-[#364139] text-xs sm:text-sm md:text-base font-normal text-center leading-relaxed sm:leading-6 w-full max-w-[340px] sm:max-w-[560px] md:max-w-[704px] mx-auto`}>
+              {"Our curated collection brings a piece of earth into your home through small-batch ceramics, terracotta pieces, natural pigment paintings, and pure pigments crafted from nature."}
             </p>
           </div>
-          <div data-figma-id="443:397" className="min-w-0 flex items-center gap-[52px] relative h-max shrink-0 self-stretch">
-            <div data-figma-id="443:394" className="relative w-[643px] h-[553px] shrink-0">
+          <div data-figma-id="443:397" className="w-full flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-[52px] relative shrink-0">
+            {/* Product Image & Nav Arrows */}
+            <div data-figma-id="443:394" className="relative w-full max-w-[603px] shrink-0">
               <div
                 data-figma-id="443:341"
-                className="absolute left-5 top-0 w-[603px] h-[553px] bg-[url('/images/5fe47613-902a-4e9a-bd47-4addf9a17e3e.jpg')] [background-size:100%_163.542%] [background-position:0%_100.075%] bg-no-repeat"
+                style={{ backgroundImage: `url('${product.image}')` }}
+                className="w-full aspect-[4/3] sm:aspect-[16/10] lg:h-[553px] lg:aspect-auto bg-cover bg-center bg-no-repeat transition-all duration-300"
               />
-              <div data-figma-id="443:353" className="absolute left-[calc(50%_+_-321.5px)] top-[calc(50%_+_-19.5px)] w-[643px] h-max flex justify-between items-center">
-                <div
-                  data-figma-id="443:411"
-                  className="relative w-10 h-10 shrink-0 bg-[#fff8e7] [box-shadow:inset_0_0_0_1px_#6d440c] overflow-hidden origin-center [transform:matrix(-1,0,0,1,0,0)]"
+              <div className="absolute inset-y-0 -left-2.5 -right-2.5 sm:-left-4 sm:-right-4 flex justify-between items-center pointer-events-none z-10">
+                <button
+                  type="button"
+                  onClick={() => setCurrentProduct((prev) => (prev === 0 ? PRODUCTS.length - 1 : prev - 1))}
+                  aria-label="Previous product"
+                  className="pointer-events-auto relative w-8 h-8 sm:w-10 sm:h-10 shrink-0 bg-[#fff8e7] [box-shadow:inset_0_0_0_1px_#845436] flex items-center justify-center cursor-pointer hover:bg-[#f3e8d5] transition-colors shadow-sm"
                 >
-                  <svg
-                    data-figma-id="443:400"
-                    viewBox="0 0 14 24"
-                    preserveAspectRatio="none"
-                    className="absolute left-[20%] top-[67.5%] w-[35%] h-[60%] origin-top-left [transform:matrix(0,-1,1,0,0,0)]"
-                  >
-                    <path d="M0 16C0.742 16 1.85 16.733 2.78 17.475C3.98 18.429 5.027 19.569 5.826 20.876C6.425 21.856 7 23.044 7 24C7 23.044 7.575 21.855 8.174 20.876C8.974 19.569 10.021 18.429 11.219 17.475C12.15 16.733 13.26 16 14 16M7 24L7 0" fill="none" stroke="#6d440c" strokeWidth={1} vectorEffect="non-scaling-stroke" strokeLinejoin="miter" />
+                  <svg width="18" height="11" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 14C8 13.258 7.267 12.15 6.525 11.22C5.571 10.02 4.431 8.973 3.124 8.174C2.144 7.575 0.956 7 3.0598e-07 7M3.0598e-07 7C0.956 7 2.145 6.425 3.124 5.826C4.431 5.026 5.571 3.979 6.525 2.781C7.267 1.85 8 0.739999 8 -6.99382e-07M3.0598e-07 7L24 7" stroke="#6D440C" />
                   </svg>
-                </div>
-                <div data-figma-id="443:408" className="relative w-10 h-10 shrink-0 bg-[#fff8e7] [box-shadow:inset_0_0_0_1px_#6d440c] overflow-hidden">
-                  <svg
-                    data-figma-id="443:400~2"
-                    viewBox="0 0 14 24"
-                    preserveAspectRatio="none"
-                    className="absolute left-[20%] top-[67.5%] w-[35%] h-[60%] origin-top-left [transform:matrix(0,-1,1,0,0,0)]"
-                  >
-                    <path d="M0 16C0.742 16 1.85 16.733 2.78 17.475C3.98 18.429 5.027 19.569 5.826 20.876C6.425 21.856 7 23.044 7 24C7 23.044 7.575 21.855 8.174 20.876C8.974 19.569 10.021 18.429 11.219 17.475C12.15 16.733 13.26 16 14 16M7 24L7 0" fill="none" stroke="#6d440c" strokeWidth={1} vectorEffect="non-scaling-stroke" strokeLinejoin="miter" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCurrentProduct((prev) => (prev === PRODUCTS.length - 1 ? 0 : prev + 1))}
+                  aria-label="Next product"
+                  className="pointer-events-auto relative w-8 h-8 sm:w-10 sm:h-10 shrink-0 bg-[#fff8e7] [box-shadow:inset_0_0_0_1px_#845436] flex items-center justify-center cursor-pointer hover:bg-[#f3e8d5] transition-colors shadow-sm"
+                >
+                  <svg width="18" height="11" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 14C16 13.258 16.733 12.15 17.475 11.22C18.429 10.02 19.569 8.973 20.876 8.174C21.856 7.575 23.044 7 24 7M24 7C23.044 7 21.855 6.425 20.876 5.826C19.969 5.026 18.429 3.979 17.475 2.781C16.733 1.85 16 0.739999 16 -6.99382e-07M24 7L-3.0598e-07 7" stroke="#6D440C" />
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
-            <div data-figma-id="443:396" className="relative w-[488px] h-[260px] shrink-0 overflow-hidden">
-              <div data-figma-id="443:386" className="absolute left-0 top-0 w-[488px] h-[552px] flex flex-col gap-8">
-                <div data-figma-id="443:362" className="flex flex-col min-w-0 justify-center gap-12 relative h-[260px] shrink-0 self-stretch">
-                  <div data-figma-id="443:363" className="flex flex-col min-w-0 items-center gap-5 relative h-[100px] shrink-0 self-stretch">
-                    <span data-figma-id="443:364" className={`${FONT_CINZEL} text-2xl leading-[32.352px] text-[#6d440c] whitespace-pre min-w-0 relative shrink-0 self-stretch`}>
-                      {"the natural history desk"}
-                    </span>
-                    <span data-figma-id="443:365" className={`${FONT_MONTSERRAT} ${TEXT5} text-base font-medium text-justify min-w-0 relative h-12 shrink-0 self-stretch`}>
-                      <span className="absolute top-0 left-0 whitespace-pre leading-6 text-left">
-                        {"Terracotta pen holders etched with bold, sculptural\nstories of the living world and ancient time."}
-                      </span>
-                    </span>
+
+            {/* Product Details & Actions */}
+            <div data-figma-id="443:396" className="w-full lg:max-w-[488px] flex flex-col gap-3 sm:gap-5 lg:gap-8 justify-center shrink-0">
+              <div className="flex flex-col gap-1.5 sm:gap-2.5">
+                <h3 className={`${FONT_CINZEL} text-lg sm:text-xl lg:text-2xl text-[#6d440c] text-left font-normal tracking-[0.02em]`}>
+                  {product.name}
+                </h3>
+                <p className={`${FONT_MONTSERRAT} text-[#364139] text-xs sm:text-sm md:text-base font-normal text-left leading-relaxed`}>
+                  {product.description}
+                </p>
+              </div>
+              <div className="flex flex-row items-center gap-3 sm:gap-4 w-full pt-1">
+                <button
+                  type="button"
+                  className="flex-1 sm:flex-initial sm:w-[194px] h-11 sm:h-12 border border-[#845436] [box-shadow:inset_0_0_0_1px_#845436] bg-[#fff8e7] flex items-center justify-center px-3 sm:px-4 cursor-pointer hover:bg-[#845436]/5 transition-colors"
+                >
+                  <span className={`${FONT_MONTSERRAT} text-[#6d440c] text-xs sm:text-sm md:text-base font-medium`}>
+                    {"Explore all Products"}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  className="flex-1 sm:flex-initial sm:w-[140px] h-11 sm:h-12 bg-[#845436] flex items-center justify-center gap-2 px-3 sm:px-4 cursor-pointer hover:bg-[#6f4227] transition-colors"
+                >
+                  <div className="relative w-4 h-4 sm:w-5 sm:h-5 shrink-0 overflow-hidden">
+                    <svg viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
+                      <use href="#figma-derived-14" fill="#fff8e7" />
+                    </svg>
+                    <svg viewBox="0 0 10.113 9.306" preserveAspectRatio="none" className="absolute left-[24.909%] top-[26.578%] w-[50.565%] h-[46.532%]">
+                      <use href="#figma-derived-15" fill="#fff8e7" />
+                    </svg>
                   </div>
-                  <div data-figma-id="443:366" className="relative w-[336px] h-max shrink-0 flex items-center gap-4">
-                    <div data-figma-id="443:367" className={`relative w-[194px] h-10 shrink-0 [box-shadow:inset_0_0_0_1px_#6d440c] flex py-2.5 px-4 box-border items-center gap-[11px]`}>
-                      <span data-figma-id="443:368" className={`${FONT_MONTSERRAT_16} relative shrink-0`}>
-                        {"Explore all Products"}
-                      </span>
-                    </div>
-                    <div data-figma-id="443:369" className={`relative w-[126px] h-10 shrink-0 bg-[#6d440c] ${ROW1}`}>
-                      <div data-figma-id="72:284~2" className="relative w-5 h-5 shrink-0 overflow-hidden">
-                        <svg data-figma-id="72:285~2" viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
-                          <use href="#figma-derived-122" fill="#fff8e7" />
-                        </svg>
-                        <svg data-figma-id="72:286~2" viewBox="0 0 10.113 9.306" preserveAspectRatio="none" className="absolute left-[24.909%] top-[26.578%] w-[50.565%] h-[46.532%]">
-                          <use href="#figma-derived-123" fill="#fff8e7" />
-                        </svg>
-                      </div>
-                      <span data-figma-id="72:287~2" className={`${FONT_MONTSERRAT_16C} relative shrink-0`}>
-                        {"Buy Now"}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div data-figma-id="443:374" className="flex flex-col min-w-0 justify-center gap-12 relative h-[260px] shrink-0 self-stretch">
-                  <div data-figma-id="443:375" className="flex flex-col min-w-0 items-center gap-5 relative h-[172px] shrink-0 self-stretch">
-                    <span data-figma-id="443:376" className={`${FONT_CINZEL} text-2xl leading-[32.352px] text-[#6d440c] whitespace-pre min-w-0 relative shrink-0 self-stretch`}>
-                      {"ceramic planter"}
-                    </span>
-                    <span data-figma-id="443:377" className={`${FONT_MONTSERRAT} ${TEXT5} text-base font-medium text-justify min-w-0 relative h-[120px] shrink-0 self-stretch`}>
-                      <span className="absolute top-0 left-0 whitespace-pre leading-6 text-left">
-                        {"Crafted from natural clay and finished by hand, this ceramic \nplanter brings warmth and character to any space. \nDesigned for both indoor and outdoor plants, each piece \ncelebrates the subtle imperfections that make handmade \npottery unique."}
-                      </span>
-                    </span>
-                  </div>
-                  <div data-figma-id="443:378" className="relative w-[336px] h-max shrink-0 flex items-center gap-4">
-                    <div data-figma-id="443:379" className={`relative w-[194px] h-10 shrink-0 [box-shadow:inset_0_0_0_1px_#6d440c] flex py-2.5 px-4 box-border items-center gap-[11px]`}>
-                      <span data-figma-id="443:380" className={`${FONT_MONTSERRAT_16} relative shrink-0`}>
-                        {"Explore all Products"}
-                      </span>
-                    </div>
-                    <div data-figma-id="443:381" className={`relative w-[126px] h-10 shrink-0 bg-[#6d440c] ${ROW1}`}>
-                      <div data-figma-id="72:284~3" className="relative w-5 h-5 shrink-0 overflow-hidden">
-                        <svg data-figma-id="72:285~3" viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
-                          <use href="#figma-derived-122" fill="#fff8e7" />
-                        </svg>
-                        <svg data-figma-id="72:286~3" viewBox="0 0 10.113 9.306" preserveAspectRatio="none" className="absolute left-[24.909%] top-[26.578%] w-[50.565%] h-[46.532%]">
-                          <use href="#figma-derived-123" fill="#fff8e7" />
-                        </svg>
-                      </div>
-                      <span data-figma-id="72:287~3" className={`${FONT_MONTSERRAT_16C} relative shrink-0`}>
-                        {"Buy Now"}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  <span className={`${FONT_MONTSERRAT} text-[#fff8e7] text-xs sm:text-sm md:text-base font-medium`}>
+                    {"Buy Now"}
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -345,41 +373,43 @@ export function HomePage() {
         </div> */}
 
         {/* Testimonials */}
-        <div data-figma-id="183:53" className="relative w-full mt-[120px] bg-[#f3e8d5] flex flex-col box-border gap-2.5 py-[72px] px-6">
-          <div data-figma-id="183:54" className="relative w-full max-w-[630px] mx-auto shrink-0 flex flex-col items-center gap-[72px]">
-            <div data-figma-id="183:55" className="flex flex-col min-w-0 items-center gap-10 relative h-max shrink-0 self-stretch">
-              <span data-figma-id="183:56" className={`${FONT_CINZEL} text-[#6d440c] whitespace-pre text-[36px] leading-[49px] text-center min-w-0 relative shrink-0 self-stretch`}>
-                {"TESTIMONIALS"}
-              </span>
-              <div data-figma-id="183:57" className="flex flex-col min-w-0 items-center gap-8 relative h-[116px] shrink-0 self-stretch">
-                <span data-figma-id="183:58" className={`${FONT_MONTSERRAT} ${TEXT6} whitespace-normal text-xl italic text-center min-w-0 relative h-[60px] shrink-0 self-stretch`}>
-                  <span
-                    data-figma-text-line="0"
-                    className="absolute left-[calc(50%_+_2.617px)] -translate-x-1/2 top-0 w-[603.32px] h-[30px] block whitespace-pre leading-[30px] text-left"
-                  >
-                    {"“I came to learn pottery and left with a completely different "}
-                  </span>
-                  <span
-                    data-figma-text-line="1"
-                    className="absolute left-1/2 -translate-x-1/2 top-[30px] w-[607.422px] h-[30px] block whitespace-pre leading-[30px] text-left"
-                  >
-                    {"appreciation for slowing down and creating with my hands”"}
-                  </span>
-                </span>
-                <span data-figma-id="183:59" className={`${FONT_CINZEL} text-[#6d440c] whitespace-pre text-xl leading-[26.96px] text-center min-w-0 relative shrink-0 self-stretch`}>
-                  {"ananya"}
+        <div data-figma-id="183:53" className="relative w-full mt-12 sm:mt-16 md:mt-24 lg:mt-[120px] bg-[#f3e8d5] flex flex-col box-border gap-2.5 py-12 sm:py-16 md:py-[72px] px-6">
+          <div data-figma-id="183:54" className="relative w-full max-w-[630px] mx-auto shrink-0 flex flex-col items-center gap-8 sm:gap-12 md:gap-[72px]">
+            <div data-figma-id="183:55" className="flex flex-col min-w-0 items-center gap-6 sm:gap-8 md:gap-10 relative h-max shrink-0 self-stretch">
+              <h2 data-figma-id="183:56" className={`${FONT_CINZEL} text-[#6d440c] text-2xl sm:text-3xl md:text-[36px] leading-tight md:leading-[49px] text-center tracking-[0.05em] min-w-0 relative shrink-0 self-stretch`}>
+                {"Testimonials"}
+              </h2>
+              <div data-figma-id="183:57" className="flex flex-col min-w-0 items-center gap-5 sm:gap-8 relative shrink-0 self-stretch">
+                <p data-figma-id="183:58" className={`${FONT_MONTSERRAT} text-[#364139] italic text-sm sm:text-base md:text-xl text-center leading-relaxed md:leading-[32px] min-w-0 relative shrink-0 self-stretch max-w-[340px] sm:max-w-[540px] md:max-w-[620px] mx-auto`}>
+                  {testimonial.quote}
+                </p>
+                <span data-figma-id="183:59" className={`${FONT_CINZEL} text-[#6d440c] text-xs sm:text-sm md:text-base tracking-[0.15em] text-center uppercase min-w-0 relative shrink-0 self-stretch font-medium`}>
+                  {testimonial.author}
                 </span>
               </div>
             </div>
-            <div data-figma-id="183:94" className="relative w-max h-[110px] shrink-0 flex flex-col items-center gap-12">
-              <div data-figma-id="183:60" className="relative w-20 h-max shrink-0 flex items-center justify-center gap-3">
-                <div data-figma-id="183:61" className="relative w-3.5 h-3.5 shrink-0 bg-[#6d440c] rounded-full" />
-                <div data-figma-id="183:62" className="relative w-2.5 h-2.5 shrink-0 bg-[rgba(109,68,12,0.15)] rounded-full" />
-                <div data-figma-id="183:63" className="relative w-2.5 h-2.5 shrink-0 bg-[rgba(109,68,12,0.15)] rounded-full" />
-                <div data-figma-id="183:64" className="relative w-2.5 h-2.5 shrink-0 bg-[rgba(109,68,12,0.15)] rounded-full" />
+            <div data-figma-id="183:94" className="relative w-full shrink-0 flex flex-col items-center gap-6 sm:gap-8 md:gap-12">
+              <div data-figma-id="183:60" className="relative h-max shrink-0 flex items-center justify-center gap-2 sm:gap-3">
+                {TESTIMONIALS.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setCurrentTestimonial(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`rounded-full transition-all cursor-pointer ${
+                      currentTestimonial === idx
+                        ? "w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 bg-[#6d440c]"
+                        : "w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 bg-[#6d440c]/25 hover:bg-[#6d440c]/50"
+                    }`}
+                  />
+                ))}
               </div>
-              <div data-figma-id="183:65" className={`relative w-[197px] h-12 shrink-0 [box-shadow:inset_0_0_0_1px_#845436] ${ROW3}`}>
-                <div data-figma-id="183:66" className="relative w-6 h-6 shrink-0 overflow-hidden">
+              <button
+                type="button"
+                data-figma-id="183:65"
+                className={`relative w-auto h-11 sm:h-12 shrink-0 [box-shadow:inset_0_0_0_1px_#845436] ${ROW3} bg-[#f3e8d5] sm:bg-transparent hover:bg-[#845436]/10 transition-colors cursor-pointer`}
+              >
+                <div data-figma-id="183:66" className="relative w-5 h-5 sm:w-6 sm:h-6 shrink-0 overflow-hidden">
                   <div data-figma-id="183:67" className="absolute left-[7.811%] top-[6.252%] w-[84.451%] h-[87.463%]">
                     <svg data-figma-id="183:68" viewBox="0 0 10.844 5.605" preserveAspectRatio="none" className="absolute left-[5.168%] top-0 w-[80.254%] h-[40.051%] opacity-[0.987]">
                       <use href="#figma-vector-148" fill="#f44336" />
@@ -395,33 +425,33 @@ export function HomePage() {
                     </svg>
                   </div>
                 </div>
-                <span data-figma-id="183:72" className={`${FONT_MONTSERRAT_16} relative shrink-0`}>
+                <span data-figma-id="183:72" className={`${FONT_MONTSERRAT} text-[#6d440c] text-sm sm:text-base font-medium relative shrink-0`}>
                   {"Write a review"}
                 </span>
-              </div>
+              </button>
             </div>
           </div>
-          <div data-figma-id="183:95" className="absolute left-[calc(50%_+_-560px)] top-[calc(50%_+_-19.5px)] w-[1120px] h-max flex justify-between items-center">
-            <div data-figma-id="183:96" className="relative w-10 h-10 shrink-0 bg-[#f3e8d5] overflow-hidden origin-center [transform:matrix(-1,0,0,1,0,0)]">
-              <svg
-                data-figma-id="183:97"
-                viewBox="-0.5 -0.5 15 25"
-                preserveAspectRatio="none"
-                className="absolute left-[calc(20%_-_0.5px)] top-[calc(67.5%_-_0.5px)] w-[calc(35%_+_1px)] h-[calc(60%_+_1px)] origin-top-left [transform:matrix(0,-1,1,0,0,0)]"
-              >
-                <use href="#figma-vector-153" fill="transparent" stroke="#6d440c" strokeWidth={1} vectorEffect="non-scaling-stroke" strokeLinejoin="miter" />
+          <div data-figma-id="183:95" className="hidden md:flex absolute inset-y-0 left-6 right-6 lg:left-16 lg:right-16 xl:left-24 xl:right-24 justify-between items-center pointer-events-none">
+            <button
+              type="button"
+              onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? TESTIMONIALS.length - 1 : prev - 1))}
+              aria-label="Previous testimonial"
+              className="pointer-events-auto p-2 cursor-pointer hover:opacity-60 transition-opacity flex items-center justify-center"
+            >
+              <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 14C8 13.258 7.267 12.15 6.525 11.22C5.571 10.02 4.431 8.973 3.124 8.174C2.144 7.575 0.956 7 3.0598e-07 7M3.0598e-07 7C0.956 7 2.145 6.425 3.124 5.826C4.431 5.026 5.571 3.979 6.525 2.781C7.267 1.85 8 0.739999 8 -6.99382e-07M3.0598e-07 7L24 7" stroke="#6D440C" />
               </svg>
-            </div>
-            <div data-figma-id="183:98" className="relative w-10 h-10 shrink-0 bg-[#f3e8d5] overflow-hidden">
-              <svg
-                data-figma-id="183:99"
-                viewBox="-0.5 -0.5 15 25"
-                preserveAspectRatio="none"
-                className="absolute left-[calc(20%_-_0.5px)] top-[calc(67.5%_-_0.5px)] w-[calc(35%_+_1px)] h-[calc(60%_+_1px)] origin-top-left [transform:matrix(0,-1,1,0,0,0)]"
-              >
-                <use href="#figma-vector-153" fill="transparent" stroke="#6d440c" strokeWidth={1} vectorEffect="non-scaling-stroke" strokeLinejoin="miter" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrentTestimonial((prev) => (prev === TESTIMONIALS.length - 1 ? 0 : prev + 1))}
+              aria-label="Next testimonial"
+              className="pointer-events-auto p-2 cursor-pointer hover:opacity-60 transition-opacity flex items-center justify-center"
+            >
+              <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 14C16 13.258 16.733 12.15 17.475 11.22C18.429 10.02 19.569 8.973 20.876 8.174C21.856 7.575 23.044 7 24 7M24 7C23.044 7 21.855 6.425 20.876 5.826C19.969 5.026 18.429 3.979 17.475 2.781C16.733 1.85 16 0.739999 16 -6.99382e-07M24 7L-3.0598e-07 7" stroke="#6D440C" />
               </svg>
-            </div>
+            </button>
           </div>
         </div>
 
