@@ -53,7 +53,8 @@ export function Menu({ onClose }: { onClose?: () => void }) {
         <NavItem data-figma-id="513:76" text="Home" href="/" onNavigate={onClose} />
         <NavItem data-figma-id="513:77" text="About Us" href="/about" onNavigate={onClose} />
         <NavItem data-figma-id="513:78" text="Pottery" href="/pottery" onNavigate={onClose} />
-        <div data-figma-id="513:79" className="relative w-full h-[38px] shrink-0 flex flex-col gap-[19px]">
+        <NavItem data-figma-id="513:78" text="Nature Experiences" href="/nature-experiences" onNavigate={onClose} />
+        {/* <div data-figma-id="513:79" className="relative w-full h-[38px] shrink-0 flex flex-col gap-[19px]">
           <motion.div
             data-figma-id="451:560"
             className="min-w-0 flex items-center gap-4 relative h-max shrink-0 self-stretch cursor-default"
@@ -66,7 +67,7 @@ export function Menu({ onClose }: { onClose?: () => void }) {
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             >
               <Link
-                href="/nature-experinces"
+                href="/nature-experiences"
                 onClick={onClose}
                 // data-figma-id={p["data-figma-id"]}
                 className="no-underline self-stretch"
@@ -90,21 +91,35 @@ export function Menu({ onClose }: { onClose?: () => void }) {
               </svg>
             </motion.div>
           </motion.div>
-        </div>
+        </div> */}
         <NavItem data-figma-id="513:90" text="Products" href='/products' onNavigate={onClose} />
         <NavItem data-figma-id="513:80" text="Blogs" />
       </div>
-      <motion.div
-        data-figma-id="513:81"
-        className="bg-[#fff8e7] [box-shadow:inset_0_0_0_1px_#6d440c] flex w-[138px] h-12 px-4 py-2.5 box-border items-center justify-center gap-2 mx-auto cursor-pointer"
-        whileHover={{ scale: 1.04, backgroundColor: "#6d440c" }}
-        whileTap={{ scale: 0.97 }}
-        transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      >
-        <span className="text-[#6d440c] whitespace-pre font-['Montserrat',_system-ui,_sans-serif] text-base font-medium leading-5 relative shrink-0">
-          {"Contact Now"}
-        </span>
-      </motion.div>
+      <Link href="/#contact-form" onClick={onClose} className="no-underline mx-auto block">
+        <motion.div
+          data-figma-id="513:81"
+          className="bg-[#fff8e7] [box-shadow:inset_0_0_0_1px_#6d440c] flex w-[138px] h-12 px-4 py-2.5 box-border items-center justify-center gap-2 cursor-pointer"
+          whileHover="hover"
+          initial="rest"
+          whileTap={{ scale: 0.97 }}
+          variants={{
+            rest: { scale: 1, backgroundColor: "#fff8e7" },
+            hover: { scale: 1.04, backgroundColor: "#6d440c" },
+          }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        >
+          <motion.span
+            variants={{
+              rest: { color: "#6d440c" },
+              hover: { color: "#fff8e7" },
+            }}
+            transition={{ duration: 0.2 }}
+            className="whitespace-pre font-['Montserrat',_system-ui,_sans-serif] text-base font-medium leading-5 relative shrink-0"
+          >
+            {"Contact Now"}
+          </motion.span>
+        </motion.div>
+      </Link>
       <motion.button
         type="button"
         aria-label="Close menu"

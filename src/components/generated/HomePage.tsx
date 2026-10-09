@@ -286,18 +286,18 @@ export function HomePage() {
                   {product.description}
                 </p>
               </div>
-              <div className="flex flex-row items-center gap-3 sm:gap-4 w-full pt-1">
+              <div className="flex flex-row items-center gap-2.5 sm:gap-4 w-full pt-1">
                 <button
                   type="button"
-                  className="flex-1 sm:flex-initial sm:w-[194px] h-11 sm:h-12 border border-[#845436] [box-shadow:inset_0_0_0_1px_#845436] bg-[#fff8e7] flex items-center justify-center px-3 sm:px-4 cursor-pointer hover:bg-[#845436]/5 transition-colors"
+                  className="flex-1 sm:flex-initial sm:w-[194px] h-11 sm:h-12 border border-[#845436] [box-shadow:inset_0_0_0_1px_#845436] bg-[#fff8e7] flex items-center justify-center px-2.5 sm:px-4 cursor-pointer hover:bg-[#845436]/5 transition-colors whitespace-nowrap"
                 >
-                  <span className={`${FONT_MONTSERRAT} text-[#6d440c] text-xs sm:text-sm md:text-base font-medium`}>
+                  <span className={`${FONT_MONTSERRAT} text-[#6d440c] text-[11px] min-[360px]:text-xs sm:text-sm md:text-base font-medium whitespace-nowrap`}>
                     {"Explore all Products"}
                   </span>
                 </button>
                 <button
                   type="button"
-                  className="flex-1 sm:flex-initial sm:w-[140px] h-11 sm:h-12 bg-[#845436] flex items-center justify-center gap-2 px-3 sm:px-4 cursor-pointer hover:bg-[#6f4227] transition-colors"
+                  className="flex-1 sm:flex-initial sm:w-[140px] h-11 sm:h-12 bg-[#845436] flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 cursor-pointer hover:bg-[#6f4227] transition-colors whitespace-nowrap"
                 >
                   <div className="relative w-4 h-4 sm:w-5 sm:h-5 shrink-0 overflow-hidden">
                     <svg viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
@@ -307,7 +307,7 @@ export function HomePage() {
                       <use href="#figma-derived-15" fill="#fff8e7" />
                     </svg>
                   </div>
-                  <span className={`${FONT_MONTSERRAT} text-[#fff8e7] text-xs sm:text-sm md:text-base font-medium`}>
+                  <span className={`${FONT_MONTSERRAT} text-[#fff8e7] text-[11px] min-[360px]:text-xs sm:text-sm md:text-base font-medium whitespace-nowrap`}>
                     {"Buy Now"}
                   </span>
                 </button>
