@@ -63,7 +63,17 @@ export function Products() {
                 <Header />
 
                 {/* Hero image band with "Products" title overlay */}
-                <div data-figma-id="133:194" className="relative w-full h-[220px] sm:h-[320px] lg:h-[471px] bg-[url('/images/e435442310b5e5e616b37cd991d317d3bfd1b0e1.jpg')] bg-[length:100%_171.975%] bg-[position:0%_63.655%] bg-no-repeat">
+                <div data-figma-id="133:194" className="relative w-full h-[220px] sm:h-[320px] lg:h-[471px] overflow-hidden bg-[#e5dcce]">
+                    <picture>
+                        <source srcSet="/images/e435442310b5e5e616b37cd991d317d3bfd1b0e1.webp" type="image/webp" />
+                        <img
+                            src="/images/e435442310b5e5e616b37cd991d317d3bfd1b0e1.jpg"
+                            alt="Products"
+                            fetchPriority="high"
+                            decoding="async"
+                            className="w-full h-full object-cover object-[0%_63.655%]"
+                        />
+                    </picture>
                     <span data-figma-id="302:781" className={`whitespace-pre text-center ${FONT_CINZEL} text-white text-[32px] sm:text-[40px] lg:text-[48px] leading-[43px] sm:leading-[54px] lg:leading-[65px] lowercase [mix-blend-mode:overlay] absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 [font-variation-settings:"wght"_500]`}>
                         {"Products"}
                     </span>
@@ -119,11 +129,17 @@ export function Products() {
                             const imageBlock = (
                                 <div key="image" className="w-full lg:max-w-[560px] flex flex-col items-center">
                                     <div className="relative w-full aspect-[16/10] sm:aspect-[3/2] overflow-hidden bg-[#e5dcce] group">
-                                        <img
-                                            src={product.image}
-                                            alt={product.title}
-                                            className="w-full h-full object-cover object-[50%_62%] transition-transform duration-500 group-hover:scale-105"
-                                        />
+                                        <picture>
+                                            <source srcSet={product.image.replace(/\.(jpg|jpeg)$/, '.webp')} type="image/webp" />
+                                            <img
+                                                src={product.image}
+                                                alt={product.title}
+                                                loading={index === 0 ? "eager" : "lazy"}
+                                                decoding="async"
+                                                fetchPriority={index === 0 ? "high" : "low"}
+                                                className="w-full h-full object-cover object-[50%_62%] transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        </picture>
                                         {/* Carousel indicator dots */}
                                         <div className="absolute bottom-3.5 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2 z-10 pointer-events-none">
                                             <span className="w-2 h-2 rounded-full bg-white shadow-sm" />

@@ -17,8 +17,19 @@ export default function Form() {
                     {/* Left Cottage Photo */}
                     <div
                         data-figma-id="79:767"
-                        className="relative w-full lg:w-[500px] xl:w-[563px] h-[340px] sm:h-[440px] lg:h-[524px] shrink-0 bg-[#d9d9d9] bg-[url('/images/e45c144a-179d-45d9-a65e-d96cd694e95c.jpg')] [background-size:211.512%_131.107%] [background-position:22.559%_9.392%] bg-no-repeat shadow-sm"
-                    />
+                        className="relative w-full lg:w-[500px] xl:w-[563px] h-[340px] sm:h-[440px] lg:h-[524px] shrink-0 bg-[#d9d9d9] overflow-hidden shadow-sm"
+                    >
+                        <picture>
+                            <source srcSet="/images/e45c144a-179d-45d9-a65e-d96cd694e95c.webp" type="image/webp" />
+                            <img
+                                src="/images/e45c144a-179d-45d9-a65e-d96cd694e95c.jpg"
+                                alt="Studio sanctuary"
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full h-full object-cover object-[22.559%_9.392%]"
+                            />
+                        </picture>
+                    </div>
 
                     {/* Right Form */}
                     <div data-figma-id="79:830" className="relative w-full lg:max-w-[560px] xl:max-w-[589px] flex flex-col gap-8 sm:gap-9">
