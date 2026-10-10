@@ -7,20 +7,35 @@ const FONT_CINZEL = "font-[Cinzel,system-ui,sans-serif] font-normal";
 
 function Frame315(p: {
   "data-figma-id": string;
-  imageClassName: string;
+  imageSrc: string;
+  objectPosition?: string;
   text: string;
 }) {
-  return <div data-figma-id={p["data-figma-id"]} className="relative w-[calc(50%-12px)] sm:w-[calc(50%-16px)] lg:w-[336px] flex-none flex flex-col gap-3 sm:gap-4">
-    <div data-figma-id="457:815" className={`${p.imageClassName} w-full h-[172px] sm:h-[240px] lg:h-[325px] shrink-0`} />
-    <div data-figma-id="457:816" className="flex flex-col min-w-0 gap-2 sm:gap-3 relative h-max shrink-0 self-stretch">
-      <span data-figma-id="457:817" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] text-[18px] sm:text-[24px] font-medium leading-[22px] sm:leading-[29.256px] min-w-0 min-h-0 relative flex-1 self-stretch`}>
-        {p.text}
-      </span>
-      <span data-figma-id="457:818" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] leading-[24px] text-[14px] sm:text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
-        {"What they do"}
-      </span>
+  const webpSrc = p.imageSrc.replace(/\.(jpg|jpeg)$/, '.webp');
+  return (
+    <div data-figma-id={p["data-figma-id"]} className="relative w-[calc(50%-12px)] sm:w-[calc(50%-16px)] lg:w-[336px] flex-none flex flex-col gap-3 sm:gap-4">
+      <div data-figma-id="457:815" className="w-full h-[172px] sm:h-[240px] lg:h-[325px] shrink-0 overflow-hidden bg-[#d9d9d9]">
+        <picture>
+          <source srcSet={webpSrc} type="image/webp" />
+          <img
+            src={p.imageSrc}
+            alt={p.text}
+            loading="lazy"
+            decoding="async"
+            className={`w-full h-full object-cover ${p.objectPosition || 'object-center'}`}
+          />
+        </picture>
+      </div>
+      <div data-figma-id="457:816" className="flex flex-col min-w-0 gap-2 sm:gap-3 relative h-max shrink-0 self-stretch">
+        <span data-figma-id="457:817" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] text-[18px] sm:text-[24px] font-medium leading-[22px] sm:leading-[29.256px] min-w-0 min-h-0 relative flex-1 self-stretch`}>
+          {p.text}
+        </span>
+        <span data-figma-id="457:818" className={`${FONT_MONTSERRAT} whitespace-pre text-center text-[#364139] leading-[24px] text-[14px] sm:text-[16px] font-medium min-w-0 min-h-0 relative flex-1 self-stretch`}>
+          {"What they do"}
+        </span>
+      </div>
     </div>
-  </div>;
+  );
 }
 export function AboutUs() {
   return <>
@@ -41,7 +56,17 @@ export function AboutUs() {
       <Header />
 
       {/* Hero image band with "About us" title overlay */}
-      <div data-figma-id="133:194" className="relative w-full h-[220px] sm:h-[320px] lg:h-[471px] bg-[url('/images/74ff52e3-1f6a-4da4-8acf-4c5a11373ff7.jpg')] bg-[length:100%_171.975%] bg-[position:0%_63.655%] bg-no-repeat">
+      <div data-figma-id="133:194" className="relative w-full h-[220px] sm:h-[320px] lg:h-[471px] overflow-hidden bg-[#e5dcce]">
+        <picture>
+          <source srcSet="/images/74ff52e3-1f6a-4da4-8acf-4c5a11373ff7.webp" type="image/webp" />
+          <img
+            src="/images/74ff52e3-1f6a-4da4-8acf-4c5a11373ff7.jpg"
+            alt="About us"
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-full object-cover object-[0%_63.655%]"
+          />
+        </picture>
         <span data-figma-id="302:781" className={`whitespace-pre text-center ${FONT_CINZEL} text-white text-[32px] sm:text-[40px] lg:text-[48px] leading-[43px] sm:leading-[54px] lg:leading-[65px] lowercase [mix-blend-mode:overlay] absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 [font-variation-settings:"wght"_500]`}>
           {"About us"}
         </span>
@@ -62,7 +87,18 @@ export function AboutUs() {
             {"We are a family-rooted collective who choose a \ncalmer life. We want to slow down, tend a garden, \nand closely observe the wild flora and fauna sharing \nthis space with us. Instead of rushing through the \nworld, we choose to creatively document her—\nlearning her rhythms, experimenting with natural \npigments, and finding our place within her.\n\nAt the core of this journey is pottery. Working with \nclay keeps us quite literally in touch with the ground, \nusing the earth herself to tell the stories we wonder \nabout and trace the patterns we admire. Clay cannot \nbe rushed; the craft demands full presence, teaching \na deep, grounding patience as a form takes shape in \nthe hands and quiets the mind."}
           </span>
         </div>
-        <div data-figma-id="133:198" className="relative w-full h-[280px] sm:h-[328px] lg:h-auto lg:w-[522px] lg:min-h-[513px] shrink-0 self-stretch bg-[#d9d9d9] bg-[url('/images/f69dfd2f616edd808571b2d8e668bbba199992b3.jpg')] bg-cover bg-center bg-no-repeat" />
+        <div data-figma-id="133:198" className="relative w-full h-[280px] sm:h-[328px] lg:h-auto lg:w-[522px] lg:min-h-[513px] shrink-0 self-stretch overflow-hidden bg-[#d9d9d9]">
+          <picture>
+            <source srcSet="/images/f69dfd2f616edd808571b2d8e668bbba199992b3.webp" type="image/webp" />
+            <img
+              src="/images/f69dfd2f616edd808571b2d8e668bbba199992b3.jpg"
+              alt="Our story"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
+            />
+          </picture>
+        </div>
       </div>
 
       {/* Our team */}
@@ -72,11 +108,11 @@ export function AboutUs() {
             {"our team"}
           </span>
           <div data-figma-id="457:928" className="flex flex-wrap justify-center min-w-0 items-start gap-6 sm:gap-8 lg:gap-[72px] relative h-max w-full max-w-[1200px] mx-auto shrink-0 self-stretch">
-            <Frame315 data-figma-id="457:814" imageClassName="bg-[url('/images/40efe39f-11a5-42d0-9fa0-c085441fd95a.jpg')] bg-cover bg-center bg-no-repeat" text="Jyothis" />
-            <Frame315 data-figma-id="457:846" imageClassName="bg-[url('/images/485d8742-a2fc-4411-b79c-577315dcb171.jpg')] bg-cover bg-center bg-no-repeat" text="Lilly" />
-            <Frame315 data-figma-id="457:882" imageClassName="bg-[url('/images/5aa739dc-168b-47bf-956b-06bb113e26bf.jpg')] bg-cover bg-center bg-no-repeat" text="Rajesh" />
-            <Frame315 data-figma-id="457:862" imageClassName="bg-[url('/images/4766ea83-dc2a-4834-bd50-119ae3687a24.jpg')] bg-[length:100%_142.308%] bg-[position:0%_100.353%] bg-no-repeat" text="Subhanu" />
-            <Frame315 data-figma-id="457:894" imageClassName="bg-[url('/images/9a0eb1d5-e70b-4419-b159-fd9c32432594.jpg')] bg-cover bg-center bg-no-repeat" text="Thejaswitha" />
+            <Frame315 data-figma-id="457:814" imageSrc="/images/40efe39f-11a5-42d0-9fa0-c085441fd95a.jpg" text="Jyothis" />
+            <Frame315 data-figma-id="457:846" imageSrc="/images/485d8742-a2fc-4411-b79c-577315dcb171.jpg" text="Lilly" />
+            <Frame315 data-figma-id="457:882" imageSrc="/images/5aa739dc-168b-47bf-956b-06bb113e26bf.jpg" text="Rajesh" />
+            <Frame315 data-figma-id="457:862" imageSrc="/images/4766ea83-dc2a-4834-bd50-119ae3687a24.jpg" objectPosition="object-[0%_100%]" text="Subhanu" />
+            <Frame315 data-figma-id="457:894" imageSrc="/images/9a0eb1d5-e70b-4419-b159-fd9c32432594.jpg" text="Thejaswitha" />
           </div>
         </div>
       </div>
