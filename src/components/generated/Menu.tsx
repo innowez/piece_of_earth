@@ -47,7 +47,7 @@ export function Menu({ onClose }: { onClose?: () => void }) {
     </svg>
     <div
       data-figma-id="513:74"
-      className="relative w-full min-h-[100dvh] bg-[url('/images/a1d84f70-a95b-446e-be43-b21a7d61468d.png')] bg-[#f3e8d5] bg-blend-multiply [background-size:100.02%_142.93%] [background-position:50.048%_53.546%] bg-no-repeat flex flex-col min-w-0 pt-[168px] px-6 pb-[72px] box-border justify-between"
+      className="relative w-full min-h-[100dvh] bg-[url('/images/a1d84f70-a95b-446e-be43-b21a7d61468d.jpg')] bg-[#f3e8d5] bg-blend-multiply [background-size:100.02%_142.93%] [background-position:50.048%_53.546%] bg-no-repeat flex flex-col min-w-0 pt-[168px] px-6 pb-[72px] box-border justify-between"
     >
       <div data-figma-id="513:75" className="flex flex-col min-w-0 gap-8 relative shrink-0 max-w-[480px] mx-auto w-full">
         <NavItem data-figma-id="513:76" text="Home" href="/" onNavigate={onClose} />

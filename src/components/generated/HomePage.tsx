@@ -145,7 +145,8 @@ export function HomePage() {
             loop
             muted
             playsInline
-            poster="/images/e0096f1e-32c9-4ff5-90f9-2777e10acbc8.png"
+            preload="metadata"
+            poster="/images/e0096f1e-32c9-4ff5-90f9-2777e10acbc8.jpg"
             className="w-full h-full object-cover"
           >
             <source src="/landing_video.mp4" type="video/mp4" />
