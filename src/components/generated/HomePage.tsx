@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Footer from '../footer';
 import Form from '../form';
 import { Header } from '../header';
+import { WHATSAPP_LINK } from '@/constant';
 
 const FONT_MONTSERRAT = "font-['Montserrat',_system-ui,_sans-serif]";
 const FONT_CINZEL = "font-['Cinzel',_system-ui,_sans-serif] font-normal";
@@ -71,10 +72,12 @@ function Frame291(p: { "data-figma-id": string; bgClassName: string; text: strin
         </h3>
       </div>
       <div data-figma-id="443:282" className="flex flex-col sm:flex-row min-w-0 justify-between gap-3 sm:gap-4 relative shrink-0 self-stretch">
-        <button
-          type="button"
+        <a
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
           data-figma-id="443:287"
-          className={`bg-[#845436] [box-shadow:inset_0_0_0_1px_#845436] ${ROW1} w-full sm:w-1/2 sm:flex-1 min-w-0 relative h-12 shrink-0 cursor-pointer hover:opacity-95 transition-opacity`}
+          className={`bg-[#845436] [box-shadow:inset_0_0_0_1px_#845436] ${ROW1} w-full sm:w-1/2 sm:flex-1 min-w-0 relative h-12 shrink-0 cursor-pointer hover:opacity-95 transition-opacity no-underline`}
         >
           <div data-figma-id="443:288" className="relative w-5 h-5 shrink-0 overflow-hidden">
             <svg data-figma-id="443:289" viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
@@ -92,7 +95,7 @@ function Frame291(p: { "data-figma-id": string; bgClassName: string; text: strin
           <span data-figma-id="443:291" className={`${FONT_MONTSERRAT_18B} relative shrink-0 text-base sm:text-lg`}>
             {"Book Your Slot"}
           </span>
-        </button>
+        </a>
         <button
           type="button"
           data-figma-id="443:283"
@@ -296,9 +299,11 @@ export function HomePage() {
                     {"Explore all Products"}
                   </span>
                 </button>
-                <button
-                  type="button"
-                  className="flex-1 sm:flex-initial sm:w-[140px] h-11 sm:h-12 bg-[#845436] flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 cursor-pointer hover:bg-[#6f4227] transition-colors whitespace-nowrap"
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 sm:flex-initial sm:w-[140px] h-11 sm:h-12 bg-[#845436] flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 cursor-pointer hover:bg-[#6f4227] transition-colors whitespace-nowrap no-underline"
                 >
                   <div className="relative w-4 h-4 sm:w-5 sm:h-5 shrink-0 overflow-hidden">
                     <svg viewBox="0 0 20 19.934" preserveAspectRatio="none" className="absolute left-0 top-0 w-full h-[99.669%]">
@@ -311,7 +316,7 @@ export function HomePage() {
                   <span className={`${FONT_MONTSERRAT} text-[#fff8e7] text-[11px] min-[360px]:text-xs sm:text-sm md:text-base font-medium whitespace-nowrap`}>
                     {"Buy Now"}
                   </span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -416,10 +421,12 @@ export function HomePage() {
                   />
                 ))}
               </div>
-              <button
-                type="button"
+              <a
+                href="https://g.page/r/CVCgRQ7Kt8rFEBM/review"
+                target='_blank'
+                rel="noopener noreferrer"
                 data-figma-id="183:65"
-                className={`relative w-auto h-11 sm:h-12 shrink-0 [box-shadow:inset_0_0_0_1px_#845436] ${ROW3} bg-[#f3e8d5] sm:bg-transparent hover:bg-[#845436]/10 transition-colors cursor-pointer`}
+                className={`relative w-auto h-11 sm:h-12 shrink-0 [box-shadow:inset_0_0_0_1px_#845436] ${ROW3} bg-[#f3e8d5] sm:bg-transparent hover:bg-[#845436]/10 transition-colors cursor-pointer no-underline`}
               >
                 <div data-figma-id="183:66" className="relative w-5 h-5 sm:w-6 sm:h-6 shrink-0 overflow-hidden">
                   <div data-figma-id="183:67" className="absolute left-[7.811%] top-[6.252%] w-[84.451%] h-[87.463%]">
@@ -440,7 +447,7 @@ export function HomePage() {
                 <span data-figma-id="183:72" className={`${FONT_MONTSERRAT} text-[#6d440c] text-sm sm:text-base font-medium relative shrink-0`}>
                   {"Write a review"}
                 </span>
-              </button>
+              </a>
             </div>
           </div>
           <div data-figma-id="183:95" className="hidden md:flex absolute inset-y-0 left-6 right-6 lg:left-16 lg:right-16 xl:left-24 xl:right-24 justify-between items-center pointer-events-none">

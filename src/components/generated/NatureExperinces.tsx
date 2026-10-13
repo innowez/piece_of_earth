@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FONT_CINZEL, FONT_MONTSERRAT } from "@/constant";
+import { FONT_CINZEL, FONT_MONTSERRAT, WHATSAPP_LINK } from "@/constant";
 import { Header } from "../header";
 import Form from "../form";
 import Footer from "../footer";
@@ -41,7 +41,7 @@ export function NatureExperinces() {
                         </p>
 
                         <a
-                            href="https://wa.me/"
+                            href={WHATSAPP_LINK}
                             target="_blank"
                             rel="noopener noreferrer"
                             data-figma-id="133:188"
@@ -81,7 +81,7 @@ export function NatureExperinces() {
                                     {"2.5 Hours | All Materials Included | Advance booking for sessions"}
                                 </p>
                                 <a
-                                    href="https://wa.me/"
+                                    href={WHATSAPP_LINK}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-fit inline-flex items-center justify-center gap-2.5 bg-[#845436] hover:bg-[#6e442a] text-[#fff8e7] px-5 py-2.5 sm:py-3 transition-colors duration-200 cursor-pointer shadow-sm group no-underline"
@@ -132,7 +132,7 @@ export function NatureExperinces() {
                                     {"2.5 Hours | All Materials Included | Advance booking for sessions"}
                                 </p>
                                 <a
-                                    href="https://wa.me/"
+                                    href={WHATSAPP_LINK}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-fit inline-flex items-center justify-center gap-2.5 bg-[#845436] hover:bg-[#6e442a] text-[#fff8e7] px-5 py-2.5 sm:py-3 transition-colors duration-200 cursor-pointer shadow-sm group no-underline"
@@ -162,7 +162,7 @@ export function NatureExperinces() {
                                     {"Offered in limited, small-group sessions to preserve the quiet rhythm of the trails. Experience slow, guided field walks through Wayanad's native paths. Observe regional birdlife, learn about local ecology, and discover the living culture of the land at a gentle, unhurried pace."}
                                 </p>
                                 <a
-                                    href="https://wa.me/"
+                                    href={WHATSAPP_LINK}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-fit inline-flex items-center justify-center gap-2.5 bg-[#845436] hover:bg-[#6e442a] text-[#fff8e7] px-5 py-2.5 sm:py-3 transition-colors duration-200 cursor-pointer shadow-sm group no-underline"

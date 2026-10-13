@@ -13,3 +13,9 @@ export const FONT_MONTSERRAT_16D = `${FONT_MONTSERRAT} text-[#6d440c] whitespace
 export const FONT_MONTSERRAT_18 = `${FONT_MONTSERRAT} whitespace-pre leading-[22px] text-[#845436] text-lg font-medium`;
 export const FONT_MONTSERRAT_18B = `${FONT_MONTSERRAT} whitespace-pre leading-[22px] text-[#fff8e7] text-lg font-medium`;
 export const FONT_CINZEL_24 = `${FONT_CINZEL} text-2xl leading-[32.352px] text-[#6d440c] lowercase whitespace-pre text-center`;
+
+export const WHATSAPP_NUMBER = "8606313634";
+export const WHATSAPP_DISPLAY = "+91 86063 13634";
+export const WHATSAPP_LINK = "https://wa.me/918606313634";
+export const INSTAGRAM_LINK = "https://www.instagram.com/apieceofearth_?mdxt=M2p0dzEyaGJ5NGVv&utm_source=qr";
+

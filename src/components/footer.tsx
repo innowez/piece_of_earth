@@ -1,5 +1,5 @@
 'use client'
-import { FONT_MONTSERRAT } from "@/constant";
+import { FONT_MONTSERRAT, INSTAGRAM_LINK, WHATSAPP_DISPLAY, WHATSAPP_LINK } from "@/constant";
 import Link from "next/link";
 
 function SocialMediaIcon(p: {
@@ -7,16 +7,20 @@ function SocialMediaIcon(p: {
     viewBox: string;
     iconClassName: string;
     href: string;
+    url?: string;
+    ariaLabel?: string;
 }) {
+    const Component = p.url ? "a" : "div";
     return (
-        <div
+        <Component
             data-figma-id={p["data-figma-id"]}
+            {...(p.url ? { href: p.url, target: "_blank", rel: "noopener noreferrer", "aria-label": p.ariaLabel } : {})}
             className="relative w-9 h-9 shrink-0 bg-[#6d440c] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#845436] transition-colors"
         >
             <svg data-figma-id="641:162" viewBox={p.viewBox} preserveAspectRatio="none" className={`relative shrink-0 ${p.iconClassName}`}>
                 <use href={p.href} fill="#fff8e7" />
             </svg>
-        </div>
+        </Component>
     );
 }
 
@@ -79,9 +83,14 @@ export default function Footer() {
                                     {"Contact"}
                                 </span>
                                 <div className="flex flex-col gap-2 sm:gap-3">
-                                    <span className={`${FONT_MONTSERRAT} text-[15px] sm:text-[16px] leading-snug sm:leading-[20px] text-[#6d440c] font-normal`}>
-                                        Phone Number
-                                    </span>
+                                    <a
+                                        href={WHATSAPP_LINK}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`${FONT_MONTSERRAT} text-[15px] sm:text-[16px] leading-snug sm:leading-[20px] text-[#6d440c] hover:opacity-75 transition-opacity font-normal no-underline`}
+                                    >
+                                        {WHATSAPP_DISPLAY}
+                                    </a>
                                     <span className={`${FONT_MONTSERRAT} text-[15px] sm:text-[16px] leading-snug sm:leading-[20px] text-[#6d440c] font-normal`}>
                                         Email Address
                                     </span>
@@ -99,10 +108,17 @@ export default function Footer() {
                     {/* Bottom Content: Social Icons & Copyright */}
                     <div data-figma-id="641:158" className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 w-full">
                         <div data-figma-id="641:159" className="flex items-center gap-3">
-                            <SocialMediaIcon data-figma-id="641:160" viewBox="0 0 20 20" iconClassName="w-4 h-4" href="#figma-vector-136" />
-                            <SocialMediaIcon data-figma-id="641:163" viewBox="0 0 125.248 128" iconClassName="w-3.5 h-3.5" href="#figma-vector-137" />
-                            <SocialMediaIcon data-figma-id="641:166" viewBox="0 0 182.337 127.131" iconClassName="w-5 h-3.5" href="#figma-vector-138" />
-                            <SocialMediaIcon data-figma-id="641:169" viewBox="0 0 116.67 220.52" iconClassName="w-2.5 h-4" href="#figma-vector-139" />
+                            <SocialMediaIcon
+                                data-figma-id="641:160"
+                                viewBox="0 0 20 20"
+                                iconClassName="w-4 h-4"
+                                href="#figma-vector-136"
+                                url={INSTAGRAM_LINK}
+                                ariaLabel="Instagram"
+                            />
+                            <SocialMediaIcon data-figma-id="641:163" viewBox="0 0 125.248 128" iconClassName="w-3.5 h-3.5" href="#figma-vector-137" ariaLabel="X" />
+                            <SocialMediaIcon data-figma-id="641:166" viewBox="0 0 182.337 127.131" iconClassName="w-5 h-3.5" href="#figma-vector-138" ariaLabel="YouTube" />
+                            <SocialMediaIcon data-figma-id="641:169" viewBox="0 0 116.67 220.52" iconClassName="w-2.5 h-4" href="#figma-vector-139" ariaLabel="Facebook" />
                         </div>
                         <span data-figma-id="641:172" className={`${FONT_MONTSERRAT} text-[14px] sm:text-[16px] leading-[20px] text-[#6d440c] text-left font-normal`}>
                             {"© 2026 A piece of earth. All Rights Reserved."}

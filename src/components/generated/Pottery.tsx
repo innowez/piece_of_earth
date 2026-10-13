@@ -4,6 +4,7 @@ import { useState } from "react";
 import {
     FONT_CINZEL,
     FONT_MONTSERRAT,
+    WHATSAPP_LINK,
 } from "@/constant";
 import { Header } from "../header";
 import Form from "../form";
@@ -108,7 +109,7 @@ export function Pottery() {
                         </p>
 
                         <a
-                            href="https://wa.me/"
+                            href={WHATSAPP_LINK}
                             target="_blank"
                             rel="noopener noreferrer"
                             data-figma-id="133:188"
@@ -226,7 +227,7 @@ export function Pottery() {
 
                     <div className="w-full flex justify-center mt-10">
                         <a
-                            href="https://wa.me/"
+                            href={WHATSAPP_LINK}
                             target="_blank"
                             rel="noopener noreferrer"
                             data-figma-id="133:188"

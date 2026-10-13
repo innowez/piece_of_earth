@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FONT_CINZEL, FONT_MONTSERRAT } from "@/constant";
+import { FONT_CINZEL, FONT_MONTSERRAT, WHATSAPP_LINK } from "@/constant";
 import { Header } from "../header";
 import Form from "../form";
 import Footer from "../footer";
@@ -106,7 +106,7 @@ export function Products() {
                                         {product.description}
                                     </p>
                                     <a
-                                        href="https://wa.me/"
+                                        href={WHATSAPP_LINK}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-fit inline-flex items-center justify-center gap-2.5 bg-[#845436] hover:bg-[#6e442a] text-[#fff8e7] px-5 py-2.5 sm:py-3 transition-colors duration-200 cursor-pointer shadow-sm group no-underline"
