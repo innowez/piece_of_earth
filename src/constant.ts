@@ -20,4 +20,6 @@ export const WHATSAPP_LINK = "https://wa.me/918606313634";
 export const INSTAGRAM_LINK = "https://www.instagram.com/apieceofearth_?mdxt=M2p0dzEyaGJ5NGVv&utm_source=qr";
 export const PINTEREST_LINK = "https://www.pinterest.com/apieceofearth7/";
 export const YOUTUBE_LINK = "https://www.youtube.com/@apieceofearth";
+export const LOCATION_ADDRESS = "Thayil Saramma Road, Moolankave, Sultan Bathery, Keralam 673592";
+export const GOOGLE_MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(LOCATION_ADDRESS)}`;
 

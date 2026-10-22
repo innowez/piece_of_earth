@@ -1,5 +1,5 @@
 'use client'
-import { FONT_MONTSERRAT, INSTAGRAM_LINK, PINTEREST_LINK, WHATSAPP_DISPLAY, WHATSAPP_LINK, YOUTUBE_LINK } from "@/constant";
+import { FONT_MONTSERRAT, GOOGLE_MAPS_LINK, INSTAGRAM_LINK, LOCATION_ADDRESS, PINTEREST_LINK, WHATSAPP_DISPLAY, WHATSAPP_LINK, YOUTUBE_LINK } from "@/constant";
 import Link from "next/link";
 
 function SocialMediaIcon(p: {
@@ -95,9 +95,14 @@ export default function Footer() {
                                     <span className={`${FONT_MONTSERRAT} text-[15px] sm:text-[16px] leading-snug sm:leading-[20px] text-[#6d440c] font-normal`}>
                                         Email Address
                                     </span>
-                                    <span className={`${FONT_MONTSERRAT} text-[15px] sm:text-[16px] leading-snug sm:leading-[20px] text-[#6d440c] font-normal`}>
-                                        Location
-                                    </span>
+                                    <a
+                                        href={GOOGLE_MAPS_LINK}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`${FONT_MONTSERRAT} text-[15px] sm:text-[16px] leading-snug sm:leading-[22px] text-[#6d440c] hover:opacity-75 transition-opacity font-normal no-underline max-w-[280px] sm:max-w-[320px]`}
+                                    >
+                                        {LOCATION_ADDRESS}
+                                    </a>
                                 </div>
                             </div>
                         </div>
