@@ -1,5 +1,5 @@
 'use client'
-import { FONT_MONTSERRAT, INSTAGRAM_LINK, WHATSAPP_DISPLAY, WHATSAPP_LINK } from "@/constant";
+import { FONT_MONTSERRAT, INSTAGRAM_LINK, PINTEREST_LINK, WHATSAPP_DISPLAY, WHATSAPP_LINK, YOUTUBE_LINK } from "@/constant";
 import Link from "next/link";
 
 function SocialMediaIcon(p: {
@@ -33,6 +33,7 @@ export default function Footer() {
                     <path id="figma-vector-137" d="M74.54 54.2L121.166 0L110.116 0L69.632 47.06L37.296 0L0 0L48.898 71.164L0 128L11.05 128L53.804 78.303L87.952 128L125.248 128L74.537 54.2L74.54 54.2ZM59.406 71.79L54.451 64.704L15.031 8.318L32.003 8.318L63.814 53.824L68.768 60.91L110.121 120.06L93.151 120.06L59.406 71.793L59.406 71.79Z" fillRule="nonzero" />
                     <path id="figma-vector-138" d="M180.783 34.08C179.663 23.27 177.254 11.32 168.384 5.04C161.514 0.17 152.483 -0.01 144.053 0C126.233 0.01 108.403 0.03 90.583 0.04C73.443 0.06 56.303 0.07 39.163 0.09C32.003 0.1 25.043 -0.46 18.393 2.64C12.683 5.3 8.213 10.36 5.523 15.99C1.793 23.82 1.013 32.69 0.563 41.35C-0.267 57.12 -0.177 72.931 0.813 88.691C1.543 100.191 3.393 112.9 12.283 120.23C20.163 126.72 31.283 127.04 41.503 127.05C73.943 127.08 106.393 127.11 138.843 127.13C143.003 127.14 147.343 127.06 151.583 126.6C159.923 125.7 167.873 123.31 173.233 117.13C178.643 110.9 180.033 102.23 180.853 94.02C182.853 74.1 182.833 53.99 180.783 34.08ZM71.823 91.49L71.823 35.64L120.184 63.56L71.823 91.49Z" fillRule="nonzero" />
                     <path id="figma-vector-139" d="M78.2 49.69L78.2 80.78L116.66 80.78L110.57 122.66L78.2 122.66L78.2 219.15C71.71 220.05 65.07 220.52 58.33 220.52C50.55 220.52 42.91 219.9 35.47 218.7L35.47 122.66L0 122.66L0 80.78L35.47 80.78L35.47 42.74C35.47 19.14 54.6 0 78.21 0L78.21 0.02C78.28 0.02 78.34 0 78.41 0L116.67 0L116.67 36.22L91.67 36.22C84.24 36.22 78.21 42.25 78.21 49.68L78.2 49.69Z" fillRule="nonzero" />
+                    <path id="figma-vector-pinterest" d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0" fillRule="nonzero" />
                 </defs>
             </svg>
 
@@ -116,9 +117,22 @@ export default function Footer() {
                                 url={INSTAGRAM_LINK}
                                 ariaLabel="Instagram"
                             />
-                            <SocialMediaIcon data-figma-id="641:163" viewBox="0 0 125.248 128" iconClassName="w-3.5 h-3.5" href="#figma-vector-137" ariaLabel="X" />
-                            <SocialMediaIcon data-figma-id="641:166" viewBox="0 0 182.337 127.131" iconClassName="w-5 h-3.5" href="#figma-vector-138" ariaLabel="YouTube" />
-                            <SocialMediaIcon data-figma-id="641:169" viewBox="0 0 116.67 220.52" iconClassName="w-2.5 h-4" href="#figma-vector-139" ariaLabel="Facebook" />
+                            <SocialMediaIcon
+                                data-figma-id="social-pinterest"
+                                viewBox="0 0 16 16"
+                                iconClassName="w-4 h-4"
+                                href="#figma-vector-pinterest"
+                                url={PINTEREST_LINK}
+                                ariaLabel="Pinterest"
+                            />
+                            <SocialMediaIcon
+                                data-figma-id="641:166"
+                                viewBox="0 0 182.337 127.131"
+                                iconClassName="w-5 h-3.5"
+                                href="#figma-vector-138"
+                                url={YOUTUBE_LINK}
+                                ariaLabel="YouTube"
+                            />
                         </div>
                         <span data-figma-id="641:172" className={`${FONT_MONTSERRAT} text-[14px] sm:text-[16px] leading-[20px] text-[#6d440c] text-left font-normal`}>
                             {"© 2026 A piece of earth. All Rights Reserved."}

@@ -79,15 +79,29 @@ export function SiteMenu() {
         createPortal(
           <AnimatePresence>
             {open && (
-              <motion.div
-                initial={{ opacity: 0, y: -24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -24 }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
-                className="fixed inset-0 z-[100] overflow-y-auto"
-              >
-                <Menu onClose={() => setOpen(false)} />
-              </motion.div>
+              <div className="fixed inset-0 z-[100] flex">
+                {/* Backdrop / Overlay */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.28, ease: 'easeInOut' }}
+                  onClick={() => setOpen(false)}
+                  className="fixed inset-0 bg-black/45 backdrop-blur-[2px]"
+                  aria-hidden="true"
+                />
+
+                {/* Left Drawer Panel */}
+                <motion.div
+                  initial={{ x: '-100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: '-100%' }}
+                  transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+                  className="relative z-10 w-[85vw] max-w-[380px] sm:max-w-[420px] h-[100dvh] shadow-2xl flex flex-col bg-[#f3e8d5] border-r border-[#6d440c]/20"
+                >
+                  <Menu onClose={() => setOpen(false)} />
+                </motion.div>
+              </div>
             )}
           </AnimatePresence>,
           document.body,

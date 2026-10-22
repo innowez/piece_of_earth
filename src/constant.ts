@@ -18,4 +18,6 @@ export const WHATSAPP_NUMBER = "8606313634";
 export const WHATSAPP_DISPLAY = "+91 86063 13634";
 export const WHATSAPP_LINK = "https://wa.me/918606313634";
 export const INSTAGRAM_LINK = "https://www.instagram.com/apieceofearth_?mdxt=M2p0dzEyaGJ5NGVv&utm_source=qr";
+export const PINTEREST_LINK = "https://www.pinterest.com/apieceofearth7/";
+export const YOUTUBE_LINK = "https://www.youtube.com/@apieceofearth";
 
